@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标题与图片搭配设计展示</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7f1 100%);
+            color: #333;
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .design-category {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            margin-bottom: 50px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .design-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .category-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+            display: inline-block;
+        }
+
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .design-item {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .design-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .img-container {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .design-item:hover .img-container img {
+            transform: scale(1.05);
+        }
+
+        .overlay-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: 25px 20px 15px;
+        }
+
+        .overlay-title h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .side-title {
+            padding: 25px;
+        }
+
+        .side-title h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .side-title p {
+            color: #7f8c8d;
+            line-height: 1.7;
+        }
+
+        .grid-layout .img-container {
+            height: 200px;
+        }
+
+        .minimal .img-container {
+            height: 180px;
+        }
+
+        .minimal .side-title {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .asymmetric {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .asymmetric .img-container {
+            height: 180px;
+        }
+
+        .asymmetric .side-title {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .caption-style {
+            position: relative;
+        }
+
+        .caption-style .img-container {
+            height: 220px;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 15px 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            backdrop-filter: blur(5px);
+        }
+
+        .caption h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .caption p {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+        }
+
+        .tips-section {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 40px;
+        }
+
+        .tips-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .tip-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .tip-card i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+
+        .tip-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .tip-card p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .design-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .category-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>标题与图片搭配设计</h1>
+            <p class="subtitle">探索现代网页中标题与图片的多种搭配方式，打造视觉吸引力与用户体验俱佳的界面</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="design-category">
+            <h2 class="category-title">标题覆盖在图片上</h2>
+            <div class="design-grid">
+                <div class="design-item">
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="山脉景观">
+                        <div class="overlay-title">
+                            <h3>壮丽的山脉景观</h3>
+                            <p>探索大自然的雄伟与美丽</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="design-item">
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" alt="森林景色">
+                        <div class="overlay-title">
+                            <h3>神秘的森林小径</h3>
+                            <p>沉浸在大自然的宁静之中</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="design-item">
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716" alt="瀑布">
+                        <div class="overlay-title">
+                            <h3>飞流直下的瀑布</h3>
+                            <p>感受大自然的力量与韵律</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="design-category">
+            <h2 class="category-title">标题在图片下方</h2>
+            <div class="design-grid">
+                <div class="design-item">
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d" alt="森林">
+                    </div>
+                    <div class="side-title">
+                        <h3>森林生态研究</h3>
+                        <p>探索森林生态系统的复杂性和多样性，了解植物、动物和环境之间的相互关系。</p>
+                    </div>
+                </div>
+
+                <div class="design-item">
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5" alt="沙漠">
+                    </div>
+                    <div class="side-title">
+                        <h3>沙漠生存指南</h3>
+                        <p>了解沙漠环境中的生存技巧，包括寻找水源、避免高温和保护自己免受野生动物伤害。</p>
+                    </div>
+                </div>
+
+                <div class="design-item">
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1476820865390-c52aeebb9891" alt="海洋">
+                    </div>
+                    <div class="side-title">
+                        <h3>海洋生态系统</h3>
+                        <p>探索海洋深处的奥秘，了解珊瑚礁、海洋生物和海洋保护的重要性。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="design-category">
+            <h2 class="category-title">网格布局设计</h2>
+            <div class="design-grid">
+                <div class="design-item grid-layout">
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1431794062232-2a99a5431c6c" alt="山景">
+                    </div>
+                    <div class="side-title">
+                        <h3>高山徒步旅行</h3>
+                        <p>挑战自我，征服高峰，体验登顶后的壮丽景色和成就感。</p>
+                    </div>
+                </div>
+
+                <div class="design-item grid-layout">
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e" alt="自然景观">
+                    </div>
+                    <div class="side-title">
+                        <h3>自然摄影技巧</h3>
+                        <p>掌握捕捉大自然之美的关键技巧，从光线到构图全方位提升。</p>
+                    </div>
+                </div>
+
+                <div class="design-item grid-layout">
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d" alt="森林景观">
+                    </div>
+                    <div class="side-title">
+                        <h3>森林疗愈之旅</h3>
+                        <p>沉浸在森林中，感受大自然的治愈力量，恢复身心平衡。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="design-category">
+            <h2 class="category-title">极简主义设计</h2>
+            <div class="design-grid">
+                <div class="design-item minimal">
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1506260408121-e353d10b87c7" alt="极简自然">
+                    </div>
+                    <div class="side-title">
+                        <h3>宁静湖景</h3>
+                        <p>平静水面，倒映天空</p>
+                    </div>
+                </div>
+
+                <div class="design-item minimal">
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd" alt="极简森林">
+                    </div>
+                    <div class="side-title">
+                        <h3>晨雾森林</h3>
+                        <p>薄雾缭绕，静谧神秘</p>
+                    </div>
+                </div>
+
+                <div class="design-item minimal">
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1414609245224-afa02bfb3fda" alt="极简沙漠">
+                    </div>
+                    <div class="side-title">
+                        <h3>沙漠日落</h3>
+                        <p>金色沙丘，夕阳西下</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="design-category">
+            <h2 class="category-title">图文说明设计</h2>
+            <div class="design-grid">
+                <div class="design-item caption-style">
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff" alt="山景">
+                        <div class="caption">
+                            <h3>山间日出</h3>
+                            <p>清晨第一缕阳光照亮山顶的瞬间</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="design-item caption-style">
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1" alt="海滩">
+                        <div class="caption">
+                            <h3>海滩日落</h3>
+                            <p>夕阳下金色海浪的迷人景象</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="design-item caption-style">
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="湖泊">
+                        <div class="caption">
+                            <h3>湖泊倒影</h3>
+                            <p>平静湖面完美映照周围群山</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tips-section">
+            <h2 class="tips-title">标题与图片搭配设计技巧</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <i class="fas fa-text-height"></i>
+                    <h3>字体选择</h3>
+                    <p>选择易读且与图片风格协调的字体，无衬线字体通常效果更好。</p>
+                </div>
+
+                <div class="tip-card">
+                    <i class="fas fa-palette"></i>
+                    <h3>色彩对比</h3>
+                    <p>确保标题颜色与背景形成足够对比，必要时使用半透明覆盖层。</p>
+                </div>
+
+                <div class="tip-card">
+                    <i class="fas fa-border-all"></i>
+                    <h3>留白空间</h3>
+                    <p>在标题周围保留足够的空白，避免视觉拥挤，增强可读性。</p>
+                </div>
+
+                <div class="tip-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>响应式设计</h3>
+                    <p>确保在不同屏幕尺寸上标题位置和大小都合适，保持良好用户体验。</p>
+                </div>
+
+                <div class="tip-card">
+                    <i class="fas fa-layer-group"></i>
+                    <h3>层级结构</h3>
+                    <p>使用不同字体大小和粗细创建清晰的视觉层次，引导用户注意力。</p>
+                </div>
+
+                <div class="tip-card">
+                    <i class="fas fa-align-left"></i>
+                    <h3>对齐方式</h3>
+                    <p>保持标题与图片元素的对齐一致性，创造整洁专业的视觉效果。</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="container">
+        <p>探索更多网页设计技巧与最佳实践 | 标题与图片搭配设计展示 &copy; 2023</p>
+    </footer>
+</body>
+
+</html>

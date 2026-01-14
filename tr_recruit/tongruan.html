@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通软团队报名</title>
+    <style>
+        .background-iframe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            z-index: -1; /* 使 iframe 作为背景 */
+        }
+        .content {
+            position: relative;
+            z-index: 1; /* 确保内容在 iframe 之上 */
+        }
+        *{
+            font-family: 楷体;
+        }
+        *{
+            cursor: url('./sym749.cur'),default;
+        }
+        body{
+            background-image: url(./2-3.jpg);
+            background-repeat: no-repeat;
+            background-position: right top;
+            background-attachment: fixed;
+        }
+        .center{
+            text-align: center;
+        }
+        .center2{
+            text-align: center;
+            width: 800px;
+            margin: 0 auto;
+            text-indent: 2em;
+
+        }
+        .center3{
+            width: 800px;
+            margin: 0 auto;
+            text-indent: 2em;
+            margin-left: 400px;
+
+        }
+        .centered-img {  
+            display: block; /* 显式地将图片设置为块级元素 */  
+            margin: 0 auto; /* 上下margin为0，左右margin自动，以实现水平居中 */  
+            width: 200px; /* 设置图片的宽度 */  
+            height: 135px; /* 设置图片的高度（可选，但如果你知道图片的尺寸，最好设置它）*/  
+            /* float: left; */
+        }
+        .left{
+            margin-left:650px;
+            font-size: 20px;
+        }
+        .li:hover{
+            color: yellow;
+        }
+        .box{
+            width: 150px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <iframe class="background-iframe" src="qiu.html"></iframe>
+    <img class="centered-img"src="./img/Logo_Mobile.png">
+    <div class="center"style="font-family: 楷体;font-size: 50px;">通软团队规范</div>
+    <br><br>
+    <p class="center2"style="font-family: 楷体; font-size=10px">重庆邮电大学通软团队的规范旨在确保团队成员能够在和谐、高效的环境中学习和合作，具体内容包括：</p>
+    <ol class="center3"style="font-family: 楷体; font-size=10px">
+        <br>
+        <li><strong>守时守信</strong>:团队成员需按时参加所有培训课程和团队活动，若有特殊情况需提前请假。</li>
+        <br>
+        <li><strong>积极参与</strong>:成员应积极参与课程学习、讨论和项目实践，主动分享自己的见解和经验，促进团队共同进步。</li>
+        <br>
+        <li><strong>合作互助</strong>:鼓励团队成员相互帮助，共同解决学习和项目中的难题。</li>
+        <br>
+        <li><strong>尊重他人</strong>:在团队活动和讨论中，成员应尊重他人的观点和劳动成果，营造一个开放、包容的交流氛围。</li>
+        <br>
+        <li><strong>遵守纪律</strong>:成员需遵守实验室的各项规章制度，包括安全操作规范、设备使用规定等</li>
+        <img class="centered-img" style="width:250px;height:200px;margin-left:200px;" src="./hezuo.jpg">
+    </ol>
+    <span class="js-cursor-container"></span>
+    <script>
+        (function fairyDustCursor() {
+ 
+            var possibleColors = ["#D61C59", "#E7D84B", "#1B8798"]
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+            var cursor = { x: width / 2, y: width / 2 };
+            var particles = [];
+ 
+            function init() {
+                bindEvents();
+                loop();
+            }
+ 
+            // Bind events that are needed
+            function bindEvents() {
+                document.addEventListener('mousemove', onMouseMove);
+                window.addEventListener('resize', onWindowResize);
+            }
+ 
+            function onWindowResize(e) {
+                width = window.innerWidth;
+                height = window.innerHeight;
+            }
+ 
+            function onMouseMove(e) {
+                cursor.x = e.clientX;
+                cursor.y = e.clientY;
+ 
+                addParticle(cursor.x, cursor.y, possibleColors[Math.floor(Math.random() * possibleColors.length)]);
+            }
+ 
+            function addParticle(x, y, color) {
+                var particle = new Particle();
+                particle.init(x, y, color);
+                particles.push(particle);
+            }
+ 
+            function updateParticles() {
+ 
+                // Updated
+                for (var i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                }
+ 
+                // Remove dead particles
+                for (var i = particles.length - 1; i >= 0; i--) {
+                    if (particles[i].lifeSpan < 0) {
+                        particles[i].die();
+                        particles.splice(i, 1);
+                    }
+                }
+ 
+            }
+ 
+            function loop() {
+                requestAnimationFrame(loop);
+                updateParticles();
+            }
+ 
+            /**
+             * Particles
+             */
+ 
+            function Particle() {
+ 
+                this.character = "*";
+                this.lifeSpan = 120; //ms
+                this.initialStyles = {
+                    "position": "fixed",
+                    "display": "inline-block",
+                    "top": "0px",
+                    "left": "0px",
+                    "pointerEvents": "none",
+                    "touch-action": "none",
+                    "z-index": "10000000",
+                    "fontSize": "25px",
+                    "will-change": "transform"
+                };
+ 
+                // Init, and set properties
+                this.init = function (x, y, color) {
+ 
+                    this.velocity = {
+                        x: (Math.random() < 0.5 ? -1 : 1) * (Math.random() / 2),
+                        y: 1
+                    };
+ 
+                    this.position = { x: x + 10, y: y + 10 };
+                    this.initialStyles.color = color;
+ 
+                    this.element = document.createElement('span');
+                    this.element.innerHTML = this.character;
+                    applyProperties(this.element, this.initialStyles);
+                    this.update();
+ 
+                    document.querySelector('.js-cursor-container').appendChild(this.element);
+                };
+ 
+                this.update = function () {
+                    this.position.x += this.velocity.x;
+                    this.position.y += this.velocity.y;
+                    this.lifeSpan--;
+ 
+                    this.element.style.transform = "translate3d(" + this.position.x + "px," + this.position.y + "px, 0) scale(" + (this.lifeSpan / 120) + ")";
+                }
+ 
+                this.die = function () {
+                    this.element.parentNode.removeChild(this.element);
+                }
+ 
+            }
+ 
+            /**
+             * Utils
+             */
+ 
+            // Applies css `properties` to an element.
+            function applyProperties(target, properties) {
+                for (var key in properties) {
+                    target.style[key] = properties[key];
+                }
+            }
+ 
+            if (!('ontouchstart' in window || navigator.msMaxTouchPoints)) init();
+        })();    
+    </script>
+    <script>
+        (function () {
+            var a_idx = 0;
+            window.onclick = function (event) {
+                var a = new Array("全民制作人", "大家好", "我是练习", "时长两年半", "个人练习生", "彭自俊", "喜欢", "唱", "跳",
+                            "rap", "篮球", "music");
+ 
+                var heart = document.createElement("b"); //创建b元素
+                heart.onselectstart = new Function('event.returnValue=false'); //防止拖动
+ 
+                document.body.appendChild(heart).innerHTML = a[a_idx]; //将b元素添加到页面上
+                a_idx = (a_idx + 1) % a.length;
+                heart.style.cssText = "position: fixed;left:-100%;"; //给p元素设置样式
+ 
+                var f = 16, // 字体大小
+                    x = event.clientX - f / 2, // 横坐标
+                    y = event.clientY - f, // 纵坐标
+                    c = randomColor(), // 随机颜色
+                    a = 1, // 透明度
+                    s = 1.2; // 放大缩小
+ 
+                var timer = setInterval(function () { //添加定时器
+                    if (a <= 0) {
+                        document.body.removeChild(heart);
+                        clearInterval(timer);
+                    } else {
+                        heart.style.cssText = "font-size:16px;cursor: default;position: fixed;color:" +
+                            c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +
+                            s + ");";
+ 
+                        y--;
+                        a -= 0.016;
+                        s += 0.002;
+                    }
+                }, 15)
+ 
+            }
+            // 随机颜色
+            function randomColor() {
+ 
+                return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math
+                .random() * 255)) + ")";
+ 
+            }
+        }());
+    </script>
+    
+</body>
+</html>

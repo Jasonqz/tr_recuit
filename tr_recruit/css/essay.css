@@ -1,0 +1,25 @@
+.article-title {
+    animation: flyIn 2s ease-out;
+}
+
+.article-info {
+    animation: flyIn 2s ease-out;
+}
+
+.img-responsive {
+    width: 90%;
+    height: auto;
+    object-fit: cover;
+}
+
+@keyframes flyIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

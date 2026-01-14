@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编程语言星球碰撞模拟</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            color: #333;
+        }
+
+        .canvas-container {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .title-overlay {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .title-overlay h1 {
+            font-size: 3rem;
+            margin-bottom: 8px;
+            background: linear-gradient(45deg, #4a69bd, #1e3799, #0c2461);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .title-overlay p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        .instructions {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: #555;
+            z-index: 10;
+            border: 1px solid #f0f0f0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(2px);
+        }
+
+        @media (max-width: 768px) {
+            .title-overlay h1 {
+                font-size: 2.2rem;
+            }
+
+            .title-overlay p {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+
+            .instructions {
+                font-size: 0.8rem;
+                bottom: 10px;
+                width: 90%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="canvas-container">
+        <canvas id="canvas"></canvas>
+        <div class="title-overlay">
+            <h1></h1>
+            <p></p>
+        </div>
+        <div class="instructions"></div>
+    </div>
+
+    <script>
+        // 配置常量
+        const LOST = 0.6;
+        const MAX_MASS = 800;
+        const PLANET_COUNT = 50;
+        const FRAGMENT_COUNT = 8;
+        const FRAGMENT_SPEED = 1.8;
+        const MAX_SPEED = 6;
+        const G = 0.25;
+        const DEFAULT_MASS = 70;
+        const LOCK_TIME = 12;
+        const MOUSE_MASS = 180;
+
+        // 编程语言字符和颜色
+        const LANGUAGE_CHARS = ['C++', 'Java', 'Python', 'JS', 'Go', 'Rust', 'PHP', 'Swift', 'Kotlin', 'Ruby', 'HTML', 'CSS', 'SQL', 'TS', 'C#', 'Lua', 'Perl', 'Scala'];
+        const LANGUAGE_COLORS = [
+            '#c71585', '#f58231', '#3572A5', '#f1e05a', '#00ADD8',
+            '#dea584', '#4F5D95', '#F05138', '#A97BFF', '#CC342D',
+            '#e34c26', '#563d7c', '#336791', '#198CE7', '#3178c6',
+            '#178600', '#000080', '#39457E', '#DC322F'
+        ];
+
+        // 获取DOM元素
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        var planets = [];
+        var maxLineLength = 50;
+        var mousepoint = { x: 0, y: 0 };
+        var frameCount = 0;
+
+        // 初始化
+        function init(count) {
+            planets = [];
+            var w = canvas.clientWidth;
+            var h = canvas.clientHeight;
+
+            for (var i = 0; i < count; i++) {
+                // 随机选择一个语言字符
+                const langIndex = Math.floor(Math.random() * LANGUAGE_CHARS.length);
+                const char = LANGUAGE_CHARS[langIndex];
+                const color = LANGUAGE_COLORS[langIndex];
+
+                planets.push({
+                    x: Math.random() * w,
+                    y: Math.random() * h,
+                    mass: DEFAULT_MASS + Math.random() * 40,
+                    vx: Math.random() * 2 - 1,
+                    vy: Math.random() * 2 - 1,
+                    lock: 0,
+                    char: char,
+                    color: color,
+                    langIndex: langIndex,
+                    isParticle: false
+                });
+            }
+
+            // 添加几个大字符
+            for (var i = 0; i < 3; i++) {
+                const langIndex = Math.floor(Math.random() * LANGUAGE_CHARS.length);
+                const char = LANGUAGE_CHARS[langIndex];
+                const color = LANGUAGE_COLORS[langIndex];
+
+                planets.push({
+                    x: Math.random() * w,
+                    y: Math.random() * h,
+                    mass: DEFAULT_MASS * 2.5,
+                    vx: Math.random() * 1 - 0.5,
+                    vy: Math.random() * 1 - 0.5,
+                    lock: 0,
+                    char: char,
+                    color: color,
+                    langIndex: langIndex,
+                    isParticle: false
+                });
+            }
+        }
+
+        // 绘制语言字符
+        function drawLanguageChar(planet) {
+            context.save();
+            // 根据质量计算字体大小
+            const fontSize = Math.max(14, Math.min(60, Math.sqrt(planet.mass) * 1.8));
+            context.font = `bold ${fontSize}px 'Segoe UI', Arial, sans-serif`;
+            context.textAlign = 'center';
+            context.textBaseline = 'middle';
+
+            // 添加轻微阴影增强可读性（使用深色阴影）
+            context.shadowColor = 'rgba(0, 0, 0, 0.15)';
+            context.shadowBlur = 8;
+            context.shadowOffsetX = 1;
+            context.shadowOffsetY = 1;
+
+            // 绘制字符
+            context.fillStyle = planet.color;
+            context.fillText(planet.char, planet.x, planet.y);
+
+            context.restore();
+        }
+
+        // 绘制连线
+        function drawLine(x1, y1, x2, y2, color) {
+            context.beginPath();
+            context.moveTo(x1, y1);
+            context.lineTo(x2, y2);
+            context.strokeStyle = color;
+            context.lineWidth = 1;
+            context.stroke();
+        }
+
+        // 碰撞检测
+        function collide() {
+            for (var i = 0, count = planets.length; i < count; i++) {
+                if (!planets[i] || planets[i].lock > 0 || planets[i].isParticle) continue;
+
+                for (var j = i + 1; j < count; j++) {
+                    if (!planets[j] || planets[j].lock > 0 || planets[j].isParticle) continue;
+
+                    const dx = planets[i].x - planets[j].x;
+                    const dy = planets[i].y - planets[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    const minDist = Math.sqrt(planets[i].mass) + Math.sqrt(planets[j].mass);
+
+                    if (distance < minDist) {
+                        // 合并字符（选择质量较大的语言）
+                        if (planets[i].mass >= planets[j].mass) {
+                            mergePlanets(i, j);
+                            planets[j] = null;
+                        } else {
+                            mergePlanets(j, i);
+                            planets[i] = null;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        // 合并字符
+        function mergePlanets(targetIdx, sourceIdx) {
+            const target = planets[targetIdx];
+            const source = planets[sourceIdx];
+
+            // 计算合并后的速度（动量守恒）
+            target.vx = (target.mass * target.vx + source.mass * source.vx) / (target.mass + source.mass);
+            target.vy = (target.mass * target.vy + source.mass * source.vy) / (target.mass + source.mass);
+
+            // 增加质量
+            target.mass += source.mass;
+
+            // 随机选择保留一种语言（倾向于质量更大的语言）
+            if (target.mass > source.mass * 1.5) {
+                // 保留target语言
+            } else if (source.mass > target.mass * 1.5) {
+                // 保留source语言
+                target.char = source.char;
+                target.color = source.color;
+                target.langIndex = source.langIndex;
+            } else {
+                // 相近质量时随机选择
+                if (Math.random() > 0.5) {
+                    target.char = source.char;
+                    target.color = source.color;
+                    target.langIndex = source.langIndex;
+                }
+            }
+        }
+
+        // 爆炸效果
+        function explode() {
+            for (var i = 0, count = planets.length; i < count; i++) {
+                if (!planets[i] || planets[i].mass < MAX_MASS || planets[i].isParticle) continue;
+
+                // 创建爆炸粒子效果
+                createExplosion(planets[i].x, planets[i].y, planets[i].color);
+
+                // 创建碎片
+                for (var j = 0; j < FRAGMENT_COUNT; j++) {
+                    const langIndex = Math.floor(Math.random() * LANGUAGE_CHARS.length);
+
+                    planets.push({
+                        x: planets[i].x + (Math.random() - 0.5) * 50,
+                        y: planets[i].y + (Math.random() - 0.5) * 50,
+                        mass: planets[i].mass / FRAGMENT_COUNT,
+                        vx: FRAGMENT_SPEED * (Math.random() * 2 - 1),
+                        vy: FRAGMENT_SPEED * (Math.random() * 2 - 1),
+                        lock: LOCK_TIME,
+                        char: LANGUAGE_CHARS[langIndex],
+                        color: LANGUAGE_COLORS[langIndex],
+                        langIndex: langIndex,
+                        isParticle: false
+                    });
+                }
+
+                planets[i] = null;
+            }
+        }
+
+        // 创建爆炸粒子效果
+        function createExplosion(x, y, color) {
+            for (let i = 0; i < 25; i++) {
+                const angle = Math.random() * Math.PI * 2;
+                const speed = Math.random() * 6 + 3;
+                const size = Math.random() * 3 + 1;
+                const life = 20 + Math.random() * 20;
+
+                planets.push({
+                    x: x,
+                    y: y,
+                    mass: size * 3,
+                    vx: Math.cos(angle) * speed,
+                    vy: Math.sin(angle) * speed,
+                    lock: life,
+                    char: '•',
+                    color: color,
+                    langIndex: -1,
+                    isParticle: true,
+                    life: life
+                });
+            }
+        }
+
+        // 鼠标移动事件
+        canvas.onmousemove = function (event) {
+            var rect = canvas.getBoundingClientRect();
+            mousepoint = {
+                x: event.clientX - rect.left,
+                y: event.clientY - rect.top
+            };
+        }
+
+        // 动画主循环
+        function step() {
+            var w = canvas.clientWidth;
+            var h = canvas.clientHeight;
+
+            // 清空画布（使用半透明白色实现拖尾效果）
+            context.fillStyle = 'rgba(255, 255, 255, 0.2)';
+            context.fillRect(0, 0, w, h);
+
+            // 物理计算
+            collide();
+            explode();
+
+            // 过滤无效粒子
+            planets = planets.filter(e => e && !isNaN(e.x) && !isNaN(e.y) &&
+                !isNaN(e.vx) && !isNaN(e.vy) && !isNaN(e.mass));
+
+            // 绘制连线和更新位置
+            for (var i = 0, count = planets.length; i < count; i++) {
+                if (!planets[i]) continue;
+
+                // 边界碰撞
+                handleBoundaryCollision(planets[i], w, h);
+
+                // 绘制字符或粒子
+                if (!planets[i].isParticle) {
+                    drawLanguageChar(planets[i]);
+                } else {
+                    // 粒子效果绘制
+                    const alpha = Math.min(1, planets[i].lock / planets[i].life);
+                    context.fillStyle = planets[i].color;
+                    context.globalAlpha = alpha;
+                    context.beginPath();
+                    context.arc(planets[i].x, planets[i].y, Math.sqrt(planets[i].mass) / 1.5, 0, Math.PI * 2);
+                    context.fill();
+                    context.globalAlpha = 1;
+                }
+
+                // 绘制连线
+                for (var j = i + 1; j < count; j++) {
+                    if (!planets[j]) continue;
+
+                    const dx = planets[i].x - planets[j].x;
+                    const dy = planets[i].y - planets[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < maxLineLength && !planets[i].isParticle && !planets[j].isParticle) {
+                        const opacity = 1 - distance / maxLineLength;
+                        drawLine(planets[i].x, planets[i].y, planets[j].x, planets[j].y,
+                            `rgba(74, 105, 189, ${opacity * 0.15})`);
+                    }
+                }
+
+                // 鼠标引力
+                applyMouseGravity(planets[i]);
+
+                // 限制速度
+                limitSpeed(planets[i]);
+
+                // 更新位置
+                planets[i].x += planets[i].vx;
+                planets[i].y += planets[i].vy;
+                planets[i].lock = Math.max(0, planets[i].lock - 1);
+            }
+
+            frameCount++;
+
+            // 每60帧添加一个新星球
+            if (frameCount % 60 === 0 && planets.length < 80) {
+                addNewPlanet(w, h);
+            }
+        }
+
+        // 添加新星球
+        function addNewPlanet(w, h) {
+            const langIndex = Math.floor(Math.random() * LANGUAGE_CHARS.length);
+            const char = LANGUAGE_CHARS[langIndex];
+            const color = LANGUAGE_COLORS[langIndex];
+
+            // 随机从边缘进入
+            const side = Math.floor(Math.random() * 4);
+            let x, y, vx, vy;
+
+            switch (side) {
+                case 0: // 顶部
+                    x = Math.random() * w;
+                    y = -20;
+                    vx = Math.random() * 2 - 1;
+                    vy = Math.random() * 0.5 + 0.5;
+                    break;
+                case 1: // 右侧
+                    x = w + 20;
+                    y = Math.random() * h;
+                    vx = -(Math.random() * 0.5 + 0.5);
+                    vy = Math.random() * 2 - 1;
+                    break;
+                case 2: // 底部
+                    x = Math.random() * w;
+                    y = h + 20;
+                    vx = Math.random() * 2 - 1;
+                    vy = -(Math.random() * 0.5 + 0.5);
+                    break;
+                case 3: // 左侧
+                    x = -20;
+                    y = Math.random() * h;
+                    vx = Math.random() * 0.5 + 0.5;
+                    vy = Math.random() * 2 - 1;
+                    break;
+            }
+
+            planets.push({
+                x: x,
+                y: y,
+                mass: DEFAULT_MASS + Math.random() * 50,
+                vx: vx,
+                vy: vy,
+                lock: 0,
+                char: char,
+                color: color,
+                langIndex: langIndex,
+                isParticle: false
+            });
+        }
+
+        // 边界碰撞处理
+        function handleBoundaryCollision(planet, w, h) {
+            if (planet.x > w) {
+                planet.x = w - (planet.x - w);
+                planet.vx *= -(1 - LOST);
+            } else if (planet.x < 0) {
+                planet.x = -planet.x;
+                planet.vx *= -(1 - LOST);
+            }
+
+            if (planet.y > h) {
+                planet.y = h - (planet.y - h);
+                planet.vy *= -(1 - LOST);
+            } else if (planet.y < 0) {
+                planet.y = -planet.y;
+                planet.vy *= -(1 - LOST);
+            }
+        }
+
+        // 应用鼠标引力
+        function applyMouseGravity(planet) {
+            const dx = mousepoint.x - planet.x;
+            const dy = mousepoint.y - planet.y;
+            const distanceSq = dx * dx + dy * dy;
+            const distance = Math.sqrt(distanceSq);
+
+            if (distance > 5 && distance < 300) {
+                const force = G * MOUSE_MASS / distanceSq;
+                planet.vx += force * dx / distance;
+                planet.vy += force * dy / distance;
+
+                // 绘制鼠标连线
+                if (distance < maxLineLength * 1.5 && !planet.isParticle) {
+                    const opacity = 1 - distance / (maxLineLength * 1.5);
+                    drawLine(planet.x, planet.y, mousepoint.x, mousepoint.y,
+                        `rgba(74, 105, 189, ${opacity * 0.25})`);
+                }
+            }
+        }
+
+        // 限制速度
+        function limitSpeed(planet) {
+            const speed = Math.sqrt(planet.vx * planet.vx + planet.vy * planet.vy);
+            if (speed > MAX_SPEED) {
+                planet.vx = planet.vx * MAX_SPEED / speed;
+                planet.vy = planet.vy * MAX_SPEED / speed;
+            }
+        }
+
+        // 调整画布大小
+        function resizeCanvas() {
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+
+            canvas.width = w;
+            canvas.height = h;
+            canvas.style.width = w + 'px';
+            canvas.style.height = h + 'px';
+
+            maxLineLength = Math.max(30, Math.min(w / 8, h / 8));
+        }
+
+        // 初始化
+        window.onload = function () {
+            resizeCanvas();
+            init(PLANET_COUNT);
+
+            // 窗口大小调整
+            window.addEventListener('resize', resizeCanvas);
+
+            // 开始动画循环
+            setInterval(step, 30);
+        };
+    </script>
+</body>
+
+</html>

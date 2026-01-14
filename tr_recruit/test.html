@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通软团队报名</title>
+    <style>
+        *{
+            font-family: 楷体;
+        }
+        *{
+            cursor: url('./sym749.cur'),default;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: 楷体;
+        }
+        .background-iframe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            z-index: -1; /* 使 iframe 作为背景 */
+        }
+        .content {
+            position: relative;
+            z-index: 1; /* 确保内容在 iframe 之上 */
+        }
+        .center{
+            font-size: 50px;
+            text-align: center;
+        }
+        .hezi {  
+            width: 150px;  
+            height: 150px;  
+            background-image:url(./lianxi.jpg) ;
+            background-size: 100px;
+            background-repeat: no-repeat;
+            position: fixed;  
+            left: 5px; 
+            top: calc(50vh - 50px); 
+            border-radius: 5%;
+            line-height: 100px;
+        }
+        .hezi2 {  
+            width: 150px;  
+            height: 150px;  
+            background-image:url(./zhaopian.jpg) ;
+            background-size: 100px;
+            background-repeat: no-repeat;
+            position: fixed;  
+            left: 5px; 
+            top: calc(50vh - 150px); 
+            border-radius: 5%;
+            line-height: 100px;
+        }
+        .centered-img {  
+            display: block; /* 显式地将图片设置为块级元素 */  
+            margin: 0 auto; /* 上下margin为0，左右margin自动，以实现水平居中 */  
+            width: 200px; /* 设置图片的宽度 */  
+            height: 135px; /* 设置图片的高度（可选，但如果你知道图片的尺寸，最好设置它）*/  
+        }
+        .left{
+            margin-left:650px;
+            font-size: 20px;
+        }
+        .li:hover{
+            color: yellow;
+        }
+        .box{
+            width: 150px;
+            height: 50px;
+        }
+        input[type="text"] {
+            /* Adjust the width and height as needed */
+            width: 300px; /* Width of the input box */
+            height: 40px; /* Height of the input box */
+            font-size: 18px; /* Font size of the text inside the input box */
+            padding: 5px; /* Space inside the input box */
+            border: 1px solid #ccc; /* Border style */
+            border-radius: 5px; /* Rounded corners */
+        }
+        .fixed-video {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 400px;
+            height: 230px;
+            border: 2px solid #ccc;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <iframe class="background-iframe" src="qiu.html"></iframe>
+    <div class="content">
+        <img class="centered-img"src="./img/Logo_Mobile.png">
+        <div class="center">报名登记</div>
+        <h2 style="font-size: 30px;margin-left:400px; ">个人信息</h2>
+        <span class="hezi"></span>
+        <span class="hezi2"></span>
+        <form action="shuju.php" method="post" enctype="multipart/form-data">
+            <label class="left" style="margin-left: 570px;">姓名：</label><input type="text" name="name" placeholder="请输入真实姓名">
+            <br><br><br>
+            <label class="left" style="margin-left: 550px;">身份证：</label><input type="text" name="id_card" placeholder="请输入身份证号">
+            <br><br><br>
+            <label class="left" style="margin-left: 570px;">性别：</label>
+            <label style="font-size: 20px;"><input type="radio" name="gender" value="male" checked>男</label>
+            <label style="font-size: 20px;"><input type="radio" name="gender" value="female" >女</label>
+            <br><br><br>
+            <label class="left" style="margin-left: 530px;">居住城市：</label>
+            <select name="city" class="city-select" style="font-size: 20px;">
+                <option>北京</option>
+                <option>天津</option>
+                <option>上海</option>
+                <option>重庆</option>
+                <option>河北</option>
+                <option>山西</option>
+                <option>内蒙古</option>
+                <option>辽宁</option>
+                <option>吉林</option>
+                <option>黑龙江</option>
+                <option>江苏</option>
+                <option>浙江</option>
+                <option>安徽</option>
+                <option>福建</option>
+                <option>江西</option>
+                <option>山东</option>
+                <option>河南</option>
+                <option>湖北</option>
+                <option>湖南</option>
+                <option>广东</option>
+                <option>广西</option>
+                <option>海南</option>
+                <option>重庆</option>
+                <option>四川</option>
+                <option>贵州</option>
+                <option>云南</option>
+                <option>西藏</option>
+                <option>陕西</option>
+                <option>甘肃</option>
+                <option>青海</option>
+                <option>宁夏</option>
+                <option>新疆</option>
+                <option>台湾</option>
+                <option>香港</option>
+                <option>澳门</option>
+            </select>
+            <br><br><br>
+            <label class="left" style="margin-left: 530px;">毕业院校：</label><input type="text" name="school" placeholder="请输入学校名称">
+            <br><br><br>
+            <label class="left" style="margin-left: 530px;">联系方式：</label><input type="text" name="contact" placeholder="请输入电话号码">
+            <br><br><br>
+            <span class="zhaopian"></span>
+            <label class="left" style="margin-left: 530px;">上传照片(自愿)：</label><input type="file" name="photo" multiple>
+            <br><br><br>
+            <input class="left" type="checkbox" name="agreement" style="margin-left: 550px;"><label style="font-size: 20px;">已同意以下协议</label>
+            <ul>
+                <a href="shuqijihua.html" target="_blank"><li class="left box" style="margin-left: 590px;">暑假培训计划</li></a>
+                <a href="tongruan.html" target="_blank"><li class="left box" style="margin-left: 590px;">通软团队规范</li></a>
+            </ul>
+            <button type="submit" style="margin-left: 550px;font-size: 20px;">&nbsp提交信息&nbsp</button>
+            <button type="reset" style="margin-left: 60px;font-size: 20px;">&nbsp重新填写&nbsp</button>
+        </form>
+    </div>
+    <video class="fixed-video" src="./xuanc.mp4" controls muted autoplay></video>
+    <!-- <video class="fixed-video" controls autoplay mute>
+        <source src="./xuanc.mp4">
+    </video> -->
+    <span class="js-cursor-container"></span>
+    <script>
+        (function fairyDustCursor() {
+ 
+            var possibleColors = ["#D61C59", "#E7D84B", "#1B8798"]
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+            var cursor = { x: width / 2, y: width / 2 };
+            var particles = [];
+ 
+            function init() {
+                bindEvents();
+                loop();
+            }
+ 
+            // Bind events that are needed
+            function bindEvents() {
+                document.addEventListener('mousemove', onMouseMove);
+                window.addEventListener('resize', onWindowResize);
+            }
+ 
+            function onWindowResize(e) {
+                width = window.innerWidth;
+                height = window.innerHeight;
+            }
+ 
+            function onMouseMove(e) {
+                cursor.x = e.clientX;
+                cursor.y = e.clientY;
+ 
+                addParticle(cursor.x, cursor.y, possibleColors[Math.floor(Math.random() * possibleColors.length)]);
+            }
+ 
+            function addParticle(x, y, color) {
+                var particle = new Particle();
+                particle.init(x, y, color);
+                particles.push(particle);
+            }
+ 
+            function updateParticles() {
+ 
+                // Updated
+                for (var i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                }
+ 
+                // Remove dead particles
+                for (var i = particles.length - 1; i >= 0; i--) {
+                    if (particles[i].lifeSpan < 0) {
+                        particles[i].die();
+                        particles.splice(i, 1);
+                    }
+                }
+ 
+            }
+ 
+            function loop() {
+                requestAnimationFrame(loop);
+                updateParticles();
+            }
+ 
+            /**
+             * Particles
+             */
+ 
+            function Particle() {
+ 
+                this.character = "*";
+                this.lifeSpan = 120; //ms
+                this.initialStyles = {
+                    "position": "fixed",
+                    "display": "inline-block",
+                    "top": "0px",
+                    "left": "0px",
+                    "pointerEvents": "none",
+                    "touch-action": "none",
+                    "z-index": "10000000",
+                    "fontSize": "25px",
+                    "will-change": "transform"
+                };
+ 
+                // Init, and set properties
+                this.init = function (x, y, color) {
+ 
+                    this.velocity = {
+                        x: (Math.random() < 0.5 ? -1 : 1) * (Math.random() / 2),
+                        y: 1
+                    };
+ 
+                    this.position = { x: x + 10, y: y + 10 };
+                    this.initialStyles.color = color;
+ 
+                    this.element = document.createElement('span');
+                    this.element.innerHTML = this.character;
+                    applyProperties(this.element, this.initialStyles);
+                    this.update();
+ 
+                    document.querySelector('.js-cursor-container').appendChild(this.element);
+                };
+ 
+                this.update = function () {
+                    this.position.x += this.velocity.x;
+                    this.position.y += this.velocity.y;
+                    this.lifeSpan--;
+ 
+                    this.element.style.transform = "translate3d(" + this.position.x + "px," + this.position.y + "px, 0) scale(" + (this.lifeSpan / 120) + ")";
+                }
+ 
+                this.die = function () {
+                    this.element.parentNode.removeChild(this.element);
+                }
+ 
+            }
+ 
+            /**
+             * Utils
+             */
+ 
+            // Applies css `properties` to an element.
+            function applyProperties(target, properties) {
+                for (var key in properties) {
+                    target.style[key] = properties[key];
+                }
+            }
+ 
+            if (!('ontouchstart' in window || navigator.msMaxTouchPoints)) init();
+        })();    
+    </script>
+    <script>
+        (function () {
+            var a_idx = 0;
+            window.onclick = function (event) {
+                var a = new Array("全民制作人", "大家好", "我是练习", "时长两年半", "个人练习生", "彭自俊", "喜欢", "唱", "跳",
+                            "rap", "篮球", "music");
+ 
+                var heart = document.createElement("b"); //创建b元素
+                heart.onselectstart = new Function('event.returnValue=false'); //防止拖动
+ 
+                document.body.appendChild(heart).innerHTML = a[a_idx]; //将b元素添加到页面上
+                a_idx = (a_idx + 1) % a.length;
+                heart.style.cssText = "position: fixed;left:-100%;"; //给p元素设置样式
+ 
+                var f = 16, // 字体大小
+                    x = event.clientX - f / 2, // 横坐标
+                    y = event.clientY - f, // 纵坐标
+                    c = randomColor(), // 随机颜色
+                    a = 1, // 透明度
+                    s = 1.2; // 放大缩小
+ 
+                var timer = setInterval(function () { //添加定时器
+                    if (a <= 0) {
+                        document.body.removeChild(heart);
+                        clearInterval(timer);
+                    } else {
+                        heart.style.cssText = "font-size:16px;cursor: default;position: fixed;color:" +
+                            c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +
+                            s + ");";
+ 
+                        y--;
+                        a -= 0.016;
+                        s += 0.002;
+                    }
+                }, 15)
+ 
+            }
+            // 随机颜色
+            function randomColor() {
+ 
+                return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math
+                .random() * 255)) + ")";
+ 
+            }
+        }());
+    </script>
+
+</body>
+</html>

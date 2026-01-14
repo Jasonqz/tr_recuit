@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="zh-CN" class="no-js"> <!--<![endif]-->
+
+<head>
+
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Always force latest IE rendering engine -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="通信软件，陶洋，软件研究中心，重庆邮电大学，重庆软件，重邮研究生">
+    <meta name="description" content="重庆市通信软件工程技术研究中心，通信软件技术研究所，重庆邮电大学通信研究生团队">
+    <!-- meta character set -->
+    <meta charset="utf-8">
+
+    <!-- Site Title -->
+    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+    <title>通信软件工程技术研究中心</title>
+
+    <!--
+    Google Fonts
+    ============================================= -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css">
+
+    <!--
+    CSS
+    ============================================= -->
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <!-- Animate -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Main Responsive -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- hover -->
+    <link rel="stylesheet" href="css/hover.css">
+    <!-- 小图标 -->
+    <link type="image/x-icon" rel="shortcut icon" href="img/2025logo1.png">
+    <!-- video-js -->
+    <link href="css/video-js.css" rel="stylesheet">
+
+
+    <!-- video-js -->
+    <link rel="stylesheet" href="./css/dierge.css">
+
+    <!-- Modernizer Script for old Browsers -->
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <style>
+        #ap {
+            background-image: url("img/水印信科.png");
+            background-position: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+
+        /* #about {
+        background-image: url("img/夜信科.jpg");
+        background-position:0% 100%;
+        background-repeat: no-repeat;
+        background-size: 600px 800px;
+    } */
+        * {
+            cursor: url('./image25/image1.cur'), default;
+        }
+
+        .dakuang {
+            width: 30%;
+            border: 2px;
+            /* 大框的边框 */
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .xiaokuang {
+            border: 1px;
+            /* 小框的边框 */
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .biaoti {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .indent {
+            text-indent: 2em;
+        }
+
+        .ho:hover {
+            color: rgb(175, 175, 55);
+
+        }
+
+        .hua {
+            overflow: auto;
+        }
+
+        .hezi {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(152, 174, 42);
+            background-image: url(./baoming.gif);
+            background-size: 100px;
+            position: fixed;
+            left: 5px;
+            top: calc(50vh - 50px);
+            border-radius: 50%;
+            line-height: 100px;
+            z-index: 9999;
+        }
+
+        .hezi:hover {
+            background-image: url(./hy.jpg);
+            background-size: 100px;
+        }
+
+        .con {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .wz2 {
+            font-family: 楷体;
+        }
+
+        #count {
+            /* background-color: white; */
+            padding: 50px 0;
+        }
+
+        .fact-item {
+            background-color: rgb(255, 255, 255);
+            border: 2px black;
+            border-radius: 30%;
+            padding: 30px;
+            margin: 20px;
+            transition: transform 0.4s;
+        }
+
+        .fact-item:hover {
+            transform: scale(1.2);
+        }
+
+        .fact-icon {
+            margin-bottom: 15px;
+            color: rgb(255, 255, 255);
+        }
+
+        .fact-item span,
+        .fact-item p {
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+        }
+
+        .wz:hover {
+            transition: transform 0.4s;
+            transform: scale(1.2);
+        }
+
+        .wz3:hover {
+            transition: transform 0.4s;
+            transform: scale(1.05);
+        }
+
+        .wz2:hover {
+            color: rgb(203, 203, 56);
+        }
+
+        #my-video {
+            width: 100%;
+            height: 100%;
+            /* 主视频高度示例 */
+        }
+
+        #my-video.pip {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            height: 170px;
+            z-index: 1000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            background-color: black;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 2000px;
+            /* 添加滚动高度 */
+        }
+
+        #footer {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            padding: 20px 0;
+            transition: background-image 1s ease-in-out;
+        }
+
+        .footer-logo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .footer-social h3 {
+            margin-top: 20px;
+        }
+
+        .hh {
+            opacity: 0;
+            /* 初始状态隐藏 */
+            transition: opacity 1s ease-in-out;
+            /* 添加平滑过渡效果 */
+        }
+
+        .hh.visible {
+            opacity: 1;
+            /* 当元素可见时显示 */
+        }
+
+        .background-iframe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            z-index: -1;
+            /* 使 iframe 作为背景 */
+        }
+
+        .rotate {
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .mix:hover .rotate {
+            animation: rotateAnimation 0.1s linear infinite;
+        }
+
+        @keyframes rotateAnimation {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes colorChange {
+            0% {
+                cursor: url('320.png'), auto;
+            }
+
+            25% {
+                cursor: url('320.png'), auto;
+            }
+
+            50% {
+                cursor: url('320.png'), auto;
+            }
+
+            75% {
+                cursor: url('320.png'), auto;
+            }
+
+            100% {
+                cursor: url('320.png'), auto;
+            }
+        }
+
+        #projects2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        #music-controls {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            /* 根据需要调整按钮容器与上方内容的距离 */
+        }
+
+        #play-button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .design-category {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            margin-bottom: 50px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .design-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .category-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+            display: inline-block;
+        }
+
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .design-item {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .design-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .img-container {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .design-item:hover .img-container img {
+            transform: scale(1.3);
+        }
+
+        .overlay-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: 25px 20px 15px;
+        }
+
+        .overlay-title h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .side-title {
+            padding: 25px;
+        }
+
+        .side-title h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .side-title p {
+            color: #7f8c8d;
+            line-height: 1.7;
+        }
+
+        .grid-layout .img-container {
+            height: 200px;
+        }
+
+        .minimal .img-container {
+            height: 180px;
+        }
+
+        .minimal .side-title {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .asymmetric {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .asymmetric .img-container {
+            height: 180px;
+        }
+
+        .asymmetric .side-title {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .caption-style {
+            position: relative;
+        }
+
+        .caption-style .img-container {
+            height: 220px;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 15px 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            backdrop-filter: blur(5px);
+        }
+
+        .caption h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .caption p {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+        }
+
+        .tips-section {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 40px;
+        }
+
+        .tips-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .tip-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .tip-card i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+
+        .tip-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .tip-card p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .design-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .category-title {
+                font-size: 1.8rem;
+            }
+
+            .design-category .category-title a {
+                color: #2c3e50;
+                text-decoration: none;
+                transition: color 0.3s;
+
+            }
+
+            .design-category .category-title a:hover {
+                color: #4facfe;
+            }
+        }
+    </style>
+
+
+    <!-- <link rel="stylesheet" href="css/introduce.css"> -->
+
+</head>
+
+<body>
+    <iframe class="background-iframe" src="qiu.html"></iframe>
+
+    <!-- <script>
+window.onload = function(){
+alert("通软团队 邀请您参加腾讯会议\n会议主题：通软团队宣讲会\n会议时间：2021/03/23 14:00-17:00 (GMT+08:00) 中国标准时间 - 北京\n点击链接入会，或添加至会议列表：\nhttps://meeting.tencent.com/s/1Zkj00x32UUT\n会议 ID：587 221 244\n手机一键拨号入会\n+8675536550000,,587221244# (中国大陆)\n+85230018898,,,2,587221244# (中国香港)\n根据您的位置拨号\n+8675536550000 (中国大陆)\n+85230018898 (中国香港)\n");
+}
+</script>-->
+    <div style="display: none;">我们的口号是搞事，搞事，搞事！（看到这句话请在加群时备注一下哈）</div>
+    <!--
+Fixed Navigation
+==================================== -->
+    <header id="navigation" class="navbar-fixed-top">
+        <div class="container banner phone-bg-black">
+
+            <div class="navbar-header">
+                <!-- responsive nav button -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- /responsive nav button -->
+
+                <!-- logo -->
+                <h1 class="navbar-brand logo">
+                    <a href="#body">
+                        <img src="img/2025logo.png" alt="Kasper Logo">
+                        <span class="fontcolor">通信软件工程技术研究中心</span>
+                    </a>
+                </h1>
+
+                <!-- /logo -->
+                <!-- <img src="img/LOGO_Without_Words1.png" alt="Kasper Logo"> -->
+
+            </div>
+
+            <!-- main nav -->
+            <nav class="collapse navigation navbar-collapse navbar-right" role="navigation">
+                <ul id="nav" class="nav navbar-nav">
+                    <li class="current"><a href="#home">首页</a></li>
+                    <li><a href="#about">简介</a></li>
+                    <li><a href="#portfolio">招新</a></li>
+                    <li><a href="#sheshi">设施</a></li>
+                    <li><a href="#lifestyle">生活趣事</a></li>
+                    <li><a href="#service">文章</a></li>
+                    <li><a href="#quotes">Join_us</a></li>
+                    <!--  <li><a href="#pricing">Pricing</a></li> -->
+                    <!-- <li><a href="#contact">Contact</a></li> -->
+                </ul>
+            </nav>
+            <!-- /main nav -->
+        </div>
+
+        </div>
+    </header>
+    <!--
+End Fixed Navigation
+==================================== -->
+
+
+    <!--
+Home Slider
+==================================== -->
+    <section id="home">
+        <div id="home-carousel" class="carousel slide" data-interval="false" style="height: 700px;">
+            <!--  <ol class="carousel-indicators">
+             <li data-target="#home-carousel" data-slide-to="0" class="active"></li>
+             <li data-target="#home-carousel" data-slide-to="1"></li>
+             <li data-target="#home-carousel" data-slide-to="2"></li>
+         </ol> -->
+            <!--/.carousel-indicators-->
+            <!-- <video id="pcvideo" src="http://113.251.218.94:333/img/myvideo.mp4" src="img/myvideo.mp4" autoplay="autoplay" id="video" class="video" loop="loop" style="width: 100%">
+         </video> -->
+            <!-- <video id="pcvideo" src="img/myvideo.mp4"  preload="preload"  controls="controls" class="video" loop="loop" style="width: 100%">
+       </video> -->
+            <video id="my-video" class="video-js" controls="controls" muted autoplay loop>
+                <source src="image25/jl.mp4" type="video/mp4">
+                <!--<source src="img/myvideo.webm" type="video/webm">-->
+            </video>
+
+
+            <!-- <video controls="controls" src="img/myvideo" style="width: 100%">
+        </video> -->
+            <!--             <div class="carousel-inner" id="pc">
+            <div class="item active"  style="background-image: url('img/slider/Page1.jpg')">
+                <div class="item active">
+                <img class="img-responsive center-block"  src="img/slider/Page1.jpg" alt="">
+                <div class="carousel-caption animated bounceInUp">
+                    <div class="animated bounceInRight">
+                        <h2><br>我们不一样</h2>
+                        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+                    </div>
+                    <h2>我们不一样</h2>
+
+                </div>
+            </div>
+
+            <div class="item" style="background-image: url('img/slider/Page2.jpg')">
+            <div class="item" >
+            <img class="img-responsive center-block" src="img/slider/Page2.jpg" alt="">
+                <div class="carousel-caption animated lightSpeedIn">
+                    <div class="animated bounceInDown">
+                        <h2><br>有啥不一样</h2>
+                        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+                    </div>
+                     <h2>有啥不一样</h2>
+
+                </div>
+            </div>
+
+            <div class="item" style="background-image: url('img/slider/Page3.jpg')">
+                <div class="item">
+                <img class="img-responsive center-block" src="img/slider/Page3.jpg" alt="">
+                 <div class="carousel-caption animated bounceInUp">
+                    <div class="animated bounceInUp">
+                        <h2><br>不信加入我们试试</h2>
+                        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+                    </div>
+                    <h2>不信加入我们试试</h2>
+
+                </div>
+            </div>
+
+        </div> -->
+            <!-- 实验室图片 -->
+            <!-- <div class="carousel-inner" id="phone">
+            <img class="img-responsive center-block phone-photo"  src="img/Logo_Mobile.png" alt="">
+        </div> -->
+            <!--/.carousel-inner-->
+            <nav id="nav-arrows" class="nav-arrows hidden-xs hidden-sm visible-md visible-lg">
+                <!-- <a class="sl-prev hidden-xs" href="#home-carousel" data-slide="prev">
+                <i class="fa fa-angle-left fa-3x"></i>
+            </a>
+            <a class="sl-next" href="#home-carousel" data-slide="next">
+                <i class="fa fa-angle-right fa-3x"></i>
+            </a> -->
+            </nav>
+
+        </div>
+    </section>
+    <!--
+End #home Slider
+========================== -->
+
+
+    <!--
+#Portfolio
+========================== -->
+    <!--
+End #Portfolio
+========================== -->
+
+    <!--
+#about
+========================== -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row introduce"
+                style="background-image: url('2-3.jpg'); background-repeat: no-repeat; background-size: cover; background-size: 70%; background-position: right bottom;">
+
+                <div class="section-title text-center wow fadeInUp">
+                    <h2 class="hh">简介</h2>
+                    <p>通信软件技术创新团队/重庆通信软件工程技术研究中心</p>
+                </div>
+                <p class="indent" style="animation: fadeInLeft 3s;">
+                    重庆市通信软件工程技术研究中心长期专注于信息通信领域理论研究、技术研发、IT工程管理技术等，倡导将前沿基础研究成果与国民经济发展及重大需求紧密结合，注重科技创新和“政-产-学-研-用”结合，服务于国家、地方的经济与民生，直接支撑了7家IT企业的创建和发展。
+                </p>
+                <p class="indent" style="animation: fadeInLeft 3s;">
+                    自中心建立以来，先后承接国家部委及省级项目40余项，横向项目30余项，累计项目经费6000余万元，参与了大量的国家级、省部级重点信息工程咨询、设计、测试和管理。在通信网络理论与技术、网络管理与测试、通信网设备、信息工程管理等方向取得了丰富的成果，先后获得省部级科技进步二等奖1项，省级科技进步三等奖4项，全军科技奖2项。到目前为止，本中心累计发表学术论文180余篇（三大检索高于20%），著专业著作15部、译著2部、技术标准1套，与中科院、北京大学、重庆大学、厦门大学、北方交通大学等高校和国家信息中心、中国信息通信研究院等单位建立了紧密的学术交流和合作关系。
+                </p>
+                <p class="indent" style="animation: fadeInLeft 3s;">
+                    团队正牵头承担国家重点研发计划“物联网与智慧城市”专项，重点突破智慧城市“感-联-知-用-融”的基础理论与关键技术，基于自主研发技术和产品构建物联网与智慧城市一体化服务系统，开展集成创新与融合服务的示范应用，支撑具有中国城市特色的国家新型智慧城市分级分类示范建设，提升城市治理能力和公共服务水平，推动我国成为智慧城市技术创新与产业应用的全球引领者。
+                </p>
+                <p class="indent" style="animation: fadeInLeft 3s;">
+                    与重庆市节能检测中心、西南计算机集团公司、东软西南公司、浪潮重庆公司、中科院重庆绿色科学院、重庆通信建设公司等大型企事业单位，以及多个政府部门建立了技术协作和合作关系。拥有多家直接支撑我们开发研究、项目实践及应用的合作公司，直接支撑了学生在研究、开发、工程管理等方面的实际技能培养和训练。
+                </p>
+
+                <div class="con" style="animation: fadeInLeft 3s;">
+                    <div class="dakuang">
+
+
+                        <div class="biaoti">研究方向</div>
+                        <div class="xiaokuang wz">智慧物联网与多维通信技术</div>
+                        <div class="xiaokuang wz">视觉智能与空间计算技术</div>
+                        <div class="xiaokuang wz">生态大数据处理技术及应用</div>
+                        <div class="xiaokuang wz">自然交互与人机智能技术等</div>
+                    </div>
+                    <div class="dakuang">
+                        <div class="biaoti">课题范围</div>
+                        <div class="xiaokuang wz">理论研究</div>
+                        <div class="xiaokuang wz">技术开发</div>
+                        <div class="xiaokuang wz">设备研制</div>
+                        <div class="xiaokuang wz">软件测试</div>
+                        <div class="xiaokuang wz">技术管理</div>
+                    </div>
+                    <div class="dakuang">
+                        <div class="biaoti wz">课题内容</div>
+                        <div class="xiaokuang wz">通信网（含移动）理论与技术</div>
+                        <div class="xiaokuang wz">物联网通信平台</div>
+                        <div class="xiaokuang wz">融合通信设备</div>
+                        <div class="xiaokuang wz">协议软件开发</div>
+                        <div class="xiaokuang wz">通信软件测试</div>
+                        <div class="xiaokuang wz">信息工程项目管理</div>
+                    </div>
+                </div>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        var target = document.querySelector('h2');
+
+                        var observer = new IntersectionObserver(function (entries) {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    target.classList.add('visible');
+                                    observer.unobserve(target); // 一旦显示就停止观察
+                                }
+                            });
+                        }, { threshold: 0.1 }); // 当10%的元素可见时触发
+
+                        observer.observe(target);
+                    });
+                </script>
+                <!-- <div class="flex-container-introduce">
+                    <div>
+                        <h3>研究方向</h3>
+                        <p><strong>·</strong>&nbsp;智慧物联网与多维通信技术<br><strong>·</strong>&nbsp;视觉智能与空间计算技术<br><strong>·</strong>&nbsp;生态大数据处理技术及应用
+                            <br><strong>·</strong>&nbsp;自然交互与人机智能技术等。
+                        </p>
+                    </div>
+                    <div>
+                        <h3>课题范围</h3>
+                        <p><strong>·</strong>&nbsp;理论研究<br><strong>·</strong>&nbsp;技术开发<br><strong>·</strong>&nbsp;设备研制
+                            <br><strong>·</strong>&nbsp;软件测试<br><strong>·</strong>&nbsp;技术管理
+                        </p>
+                    </div>
+                    <div>
+                        <h3>课题内容</h3>
+                        <p><strong>·</strong>&nbsp;通信网（含移动）理论与技术<br><strong>·</strong>&nbsp;物联网通信平台<br><strong>·</strong>&nbsp;
+                            融合通信设备<br><strong>·</strong>&nbsp;协议软件开发<br><strong>·</strong>&nbsp;通信软件测试<br><strong>·</strong>&nbsp;信息工程项目管理
+                        </p>
+                    </div>
+                </div> -->
+                <h3 style="animation: fadeInLeft 3s;">招生对象</h3>
+                <br>
+                <p class="p1" style="animation: fadeInLeft 3s;">
+                    <strong>081000&nbsp;信息与通信工程&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;085401&nbsp;新一代电子信息技术(含量子技术等)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;085402&nbsp;通信工程(含宽带网络、移动通信等)</strong>
+                </p>
+                <p class="indent" style="animation: fadeInLeft 3s;">
+                    团队注重研究生理论研究、技术开发、工程管理等多方面的培养，以全面发展、高质量的研究生培养为目标，毕业生就业质量高、行业领域广泛，遍及通信信息、金融、能源等行业头部企业。</p>
+            </div>
+        </div>
+    </section>
+    <!--
+End #about
+========================== -->
+
+
+
+    <!--
+#count
+========================== -->
+
+    <section id="count">
+        <div class="container">
+            <div class="row">
+                <div class="counter-section clearfix">
+                    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.5s">
+                        <div class="fact-item text-center">
+                            <div class="fact-icon">
+                                <i class="fa fa-check-square fa-lg"></i>
+                            </div>
+                            <span>170余人</span>
+                            <p>培养研究毕业生</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.8s">
+                        <div class="fact-item text-center">
+                            <div class="fact-icon">
+                                <i class="fa fa-users fa-lg"></i>
+                            </div>
+                            <span>70余项</span>
+                            <p>国级、省级项目</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-delay="1.1s">
+                        <div class="fact-item text-center last">
+                            <div class="fact-icon">
+                                <i class="fa fa-clock-o fa-lg"></i>
+                            </div>
+                            <span>7000余万</span>
+                            <p>累计项目经费</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-delay="1.3s">
+                        <div class="fact-item text-center last">
+                            <div class="fact-icon">
+                                <i class="fa fa-trophy fa-lg"></i>
+                            </div>
+                            <span>15部</span>
+                            <p>专业著作</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--
+End #count
+========================== -->
+
+    <!--
+#about-us
+========================== -->
+    <section id="about-us">
+
+        <div class="our-team">
+            <div class="container">
+                <div class="row marginbuttom">
+
+                    <!-- section title -->
+                    <!-- <div class="title text-center"  >
+                    <h2>Little More<span class="color"> About Us</span></h2>
+                    <div class="border"></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div> -->
+                    <div class="section-title text-center wow fadeInUp">
+                        <h2>Our Team</h2>
+                        <p>师资队伍</p>
+                    </div>
+                    <!-- /section title -->
+
+                    <div class="col-md-4">
+                        <img style="height:340px;" src="./taoyang.jpg" class="img-responsive center-block wz3" alt="">
+                        <div class="doe">
+                            <h5>陶洋</h5>
+                            <span>通信软件技术中心主任</span>
+                        </div>
+                    </div>
+                    <div class="col-md-8" id="taofont" style="animation: fadeInLeft 3s;">
+                        <p class="indent">
+                            前任重邮通信学院副院长、重庆市通信软件工程技术研究中心主任。中国人民解放军国防科技大学计算机软件专业本科、重庆大学计算科学理论硕士、重庆大学计算机科学理论博士、中国科学院计算所博士后、美国密苏里大学高级访问学者。
+                        </p>
+                        <br>
+                        <p class="indent">
+                            近五年，承担并主持了国家重点研发计划（生态环境）项目课题牵头1项、省级面上攻关项目1项、企业横向委托3项，“三峡库区生态数景工程”（单位投入）等，累计经费近1500万元，主持研发创新物联网智能设备3台套，入选国家十三五科技创新成果展。获得国家专利授权10项、著作权5项、专著4部、省部级科技进步三等奖1项等。
+                        </p>
+                        <br>
+                        <p class="indent">
+                            先后承担并主持国家重点研发计划、省部级重大重点项目和信息化工程的研究、开发及管理，主持了６台套创新设备和系统的研发及推广应用。累计完成科研项目超过60项，经费超过6千万。已获重庆百人计划等省部级人才称号5个；国家、省部级及军队科技进步奖9项，国家级出版社著作13部，获得国家发明专利27项，发表相关学术论文150余篇。
+                        </p>
+                        <p class="indent">主要研究领域：<strong>通信网络技术及软件、物联网应用、融合通信技术、信息工程系统技术（测试、设计、监理）</strong>。</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 project marginbuttom">
+                        <h4 style="animation: fadeInLeft 3s;">在研项目...</h4>
+                        <ul style="animation: fadeInLeft 3s;">
+                            <li><img src="img/icons/project2.png" alt="">&nbsp;面向绿色生态城市管理的多源泛在感知与多尺度物联融合组</li>
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;网技术研究&nbsp;&nbsp;2019至今</li>
+                            <li><img src="img/icons/project4.png" alt="">&nbsp;基于智能视觉的高精度双目空间定位技术及应用&nbsp;&nbsp;2020至今
+                            </li>
+                            <li><img src="img/icons/project1.png" alt="">&nbsp;长江三峡库区生态数景&nbsp;&nbsp;2020至今</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-8 project">
+                        <h4 style="animation: fadeInLeft 3s;">部分项目成果</h4>
+                        <ul style="animation: fadeInLeft 3s;">
+                            <li> <img src="img/icons/right.png" alt=""> B-ISDN与LAN/MAN相连接的控制技术&nbsp;&nbsp;邮电部
+                                （国家级重点项目）&nbsp;&nbsp;42万&nbsp;&nbsp;1995.3-1998.1</li>
+                            <li> <img src="img/icons/right.png" alt=""> 四川地区网管工程&nbsp;&nbsp;电信总局
+                                （重大工程）&nbsp;&nbsp;2000万&nbsp;&nbsp;1995.1-1998.12</li>
+                            <li> <img src="img/icons/right.png" alt=""> 网络系统测试评估体系研究及应用 &nbsp;&nbsp;重庆市计委
+                                （省部级攻关项目）&nbsp;&nbsp;25万 &nbsp;&nbsp;2001.9-2003.9</li>
+                            <li> <img src="img/icons/right.png" alt=""> 多维应急通信系统关键技术研究与实现 &nbsp;&nbsp;重庆市科委
+                                （省部级重点攻关）&nbsp;&nbsp;90万 &nbsp;&nbsp;2009.9-2011.8</li>
+                            <li> <img src="img/icons/right.png" alt="">重庆市互联网科技产业园建设示范工程&nbsp;&nbsp;重庆市科委
+                                （省部级重大项目）&nbsp;&nbsp;300万 &nbsp;&nbsp;2012.3-2015.6</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- End taoyang -->
+            </div>
+        </div>
+        <!-- outher teacher -->
+        <div class="our-team" id="team" style="background-color: rgba(0,0,0,0);">
+            <div class="container">
+                <div class="section-title text-center wow fadeInUp">
+                    <h2>Our Team</h2>
+                    <p>师资队伍</p>
+                </div>
+                <!-- <div class="team-lead">
+                 <div class="col-md-3 design ">
+                    <div class="tile">
+                         <div class="text">
+                            <img class="img-responsive design-team center-block"  src="img/client/la.jpg" alt="" />
+                            <h2 class="animate-text">重庆大学通信工程学院博士</h2></h2><br><br><br><br><br>
+                            <p class="animate-text">参与国家级项目1项，省部级项目2项，横向项目3项。以第一作者发表SCI论文4篇。主要研究方向是传感网，自组网和网络安全。</p>
+                            </div>
+                    </div>
+                    <div class="doe">
+                        <h5>杨柳</h5>
+                        <span>Designer</span>
+                    </div>
+                 </div>
+                 <div class="col-md-3 design">
+                    <div class="tile">
+                         <div class="text">
+                            <img class="img-responsive design-team center-block"  src="img/client/la.jpg" alt="" />
+                            <h2 class="animate-text">武汉大学测绘遥感信息工程国家重点实验室博士</h2>
+                            <p class="animate-text">参与国家973项目1项，国家自然科学基金面上项目2项，省部级项目2项，以第一作者发表SCI论文3篇，EI论文1篇，专利1项。主要研究方向是云计算、数据分析及地理信息系统。 </p>
+                            </div>
+                    </div>
+                    <div class="doe">
+                        <h5>熊炼</h5>
+                        <span>重庆邮电大学通信与信息工程学院讲师</span>
+                    </div>
+                 </div>
+                 <div class="col-md-3 design">
+                 <div class="tile">
+                         <div class="text">
+                            <img class="img-responsive design-team center-block"  src="img/client/lal.jpg" alt="" />
+                            <h2 class="animate-text">重庆大学通信工程学院博士</h2></h2><br><br>
+                            <p class="animate-text">参与国家国际合作专项项目1项，省部级项目1项，横向项目1项。以第一作者或者通信作者发表SCI 1区论文1篇，SCI 2区论文1篇，SCI 3区论文1篇。主要研究方向：智能信息处理，人工智能，机器学习，机器嗅觉。</p>
+                            </div>
+                    </div>
+                    <div class="doe">
+                        <h5>梁志芳</h5>
+                        <span>Designer</span>
+                    </div>
+                 </div>
+                 <div class="col-md-3 design">
+                    <div class="tile">
+                         <div class="text">
+                            <img class="img-responsive design-team center-block"  src="img/client/la.jpg" alt="" />
+                            <h2 class="animate-text">重庆大学通信工程学院博士</h2><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                            <p class="animate-text"></p>
+                            </div>
+                    </div>
+                    <div class="doe">
+                        <h5>郭坦</h5>
+                        <span>Designer</span>
+                    </div>
+                 </div>
+
+                 <div class="clearfix"> </div>
+            </div> -->
+                <!-- <div class="row">
+                <div class="col-md-4 col-sm-6 st-service">
+                    <h3><i></i> 黄宏程，副教授，硕士</h3>
+                    <p>主要研究方向：智慧物联与信息处理技术、虚拟现实技术及应用。主要成果：主要从事信息与通信工程相关领域的科研和教学工作，作为支持或主研人员承担重庆市科委、教委及国家自然科学基金委项目5项，发表学术论文20余篇，出版著作2部。</p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 st-service">
+                    <h3><i></i> 胡敏，副教授，硕士</h3>
+                    <p>虚拟现实与智能交互，主持或参加完成科研项目13项，教改项目12项，其中获国家级教学成果二等奖《适应行业，多维协同，加强学生专业实践能力培养的研究与实践》；重庆市科技计划项目《网络测试及性能评价模型研究》获重庆市科技进步三等奖，第二完成人。</p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 st-service">
+                    <h3><i></i> 熊炫睿，副教授，博士</h3>
+                    <p>主要从事信息系统开发、数据分析处理的研究工作。曾经在海外公司和大学任职4年，从事移动通信相关研发及测试验证工作。2014年回国后，先后参与国家和省部级等项目2项。已发表学术论文十余篇。</p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 st-service">
+                    <h3><i></i>武俊，讲师，硕士</h3>
+                    <p>研究方向：信息通信网络规划和优化。主要成果：主持2项校级教学教改及科研项目，参与省部级教学教改项目科研8项。出版著作1部、译著1部、获重庆市科技进步奖励1项、重庆市微课教学比赛优秀奖、重庆邮电大学教育成果奖1项，发表学术论文5篇，其中IE收录2篇、中文核心3篇。在“华为网院杯”的竞赛中获得优秀辅导员的称号。</p>
+                </div>
+
+
+                <div class="col-md-4 col-sm-6 st-service">
+                    <h3><i></i> 杨柳，讲师，博士</h3>
+                    <p>重庆大学通信工程学院博士，参与国家级项目1项，省部级项目2项，横向项目3项。以第一作者发表SCI论文4篇。主要研究方向是传感网，自组网和网络安全。</p>
+                </div>
+                <div class="col-md-4 col-sm-6 st-service">
+                    <h3><i></i> 熊炼，讲师，博士</h3>
+                    <p>武汉大学测绘遥感信息工程国家重点实验室博士，参与国家973项目1项，国家自然科学基金面上项目2项，省部级项目2项，以第一作者发表SCI论文3篇，EI论文1篇，专利1项。主要研究方向是云计算、数据分析及地理信息系统。</p>
+                </div>
+                <div class="col-md-4 col-sm-6 st-service">
+                    <h3><i></i> 梁志芳，讲师，博士</h3>
+                    <p>重庆大学通信工程学院博士，参与国家国际合作专项项目1项，省部级项目1项，横向项目1项。以第一作者或者通信作者发表SCI 1区论文1篇，SCI 2区论文1篇，SCI 3区论文1篇。主要研究方向：智能信息处理，人工智能，机器学习，机器嗅觉。</p>
+                </div>
+                <div class="col-md-4 col-sm-6 st-service">
+                    <h3><i></i> 郭坦，讲师，博士</h3>
+                    <p>重庆大学通信工程学院博士，主要研究方向是图像处理，数据挖掘。</p>
+                </div>
+                <div class="col-md-4 col-sm-6 st-service">
+                    <h3><i></i> 吴祺，博士</h3><br>
+                    <h3><i></i> 周林，副教授</h3>
+                    <! <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta libero autem, magni veritatis, optio dolor.</p> -->
+                <!--/div> 
+
+                <!- <div class="col-md-4 col-sm-6 st-service">
+                    <h3><i></i> 周林，副教授，总经理</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta libero autem, magni veritatis, optio dolor.</p>
+                </div> -->
+                <!--/div>
+        </div>
+    </div>
+    <!- end outher teacher -->
+                <!-- End container -->
+                <div class="tttt">
+                    <div class="card">
+                        <div class="photo"><img src="img2/hm.jpg" alt=""></div>
+                        <h1 class="ho"> 胡敏</h1>
+                        <h2>教授，硕导</h2>
+                        <p><a href="https://faculty.cqupt.edu.cn/humin1/zh_CN/index.htm" target="_blank">详细信息</a></p>
+                        <p class="hua">
+                            重庆邮电大学通信学院数字媒体技术系主任。主要从事通信网络、人机交互与媒体计算等领域研究。近年来承担国家重点研发计划项目、重庆市自然科学基金项目、重庆市科委科技公关重点项目10余项，发表SCI、EI学术论文30余篇，国家发明专利10余项，获得重庆市科技进步奖2项，获国家级教学成果二等奖1项，重庆市教学成果奖一等奖2项。
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="photo"><img src="img2/hhc.jpg" alt=""></div>
+                        <h1 class="ho">黄宏程</h1>
+                        <h2>副教授，硕导</h2>
+                        <p><a href="https://faculty.cqupt.edu.cn/huanghc/zh_CN/index.htm" target="_blank">详细信息</a></p>
+                        <p class="hua">
+                            重庆市通信软件技术工程研究中心副主任。主要从事物联网、大数据、人机交互等领域研究。主持或承担国家重点研发计划项目、国家自然科学基金项目、省部级基础与前沿技术研究项目、企业委托项目30余项；申请国家发明专利20项，发表权威期刊、SCI学术论文50余篇；获得中国产学研合作创新成果奖1项，省部级科技进步等奖1项，中国人民解放军科技进步奖2项。
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="photo"><img src="img2/yl.PNG" alt=""></div>
+                        <h1 class="ho"> 杨柳</h1>
+                        <h2>副教授，硕导</h2>
+                        <p><a href="https://faculty.cqupt.edu.cn/yangliu/zh_CN/index.htm" target="_blank">详细信息</a></p>
+                        <p class="hua">
+                            博士，重庆市通信软件工程技术研究中心副主任，重庆邮电大学云阳产业技术研究院副院长。主要从事物联网相关领域的研究，以第一作者发表SCI论文10余篇；以第一作者出版著作《Python人工智能开发从入门到精通》，共66万余字；主持国家自然科学基金、重庆市自然科学基金、重庆市教委科技项目各一项；申请及授权发明专利10余项。
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="photo"><img src="img2/llf.png" alt=""></div>
+                        <h1 class="ho"> 梁志芳</h1>
+                        <h2>讲师，博士</h2>
+                        <p><a href="https://faculty.cqupt.edu.cn/liangzf/zh_CN/index.htm" target="_blank">详细信息</a></p>
+                        <p class="hua">重庆大学通信工程学院博士，参与国家国际合作专项项目1项，省部级项目1项，横向项目1项。以第一作者或者通信作者发表SCI 1区论文1篇，SCI 2区论文1篇，SCI
+                            3区论文1篇。主要研究方向：智能信息处理，人工智能，机器学习，机器嗅觉。</p>
+                    </div>
+                    <div class="card">
+                        <div class="photo"><img src="img2/gt1.png" alt=""></div>
+                        <h1 class="ho"> 郭坦</h1>
+                        <h2>副教授，硕导</h2>
+                        <p><a href="https://faculty.cqupt.edu.cn/guot/zh_CN/index.htm" target="_blank">详细信息</a></p>
+                        <p class="hua">
+                            重庆大学通信工程学院博士，主要研究模式识别、机器学习、计算机视觉、高光谱图像处理等人工智能前沿科技领域。近年发表高质量期刊和会议发表研究论文30余篇，ESI高被引论文2篇，授权和受理国家发明专利8项，在人工智能和计算机视觉领域出版著作和专著章节3部。入选中国科学技术协会“优秀中外青年交流计划”和全国博管办国家博士后“澳门青年学者计划”。
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="photo"><img src="img2/xl.png" alt=""></div>
+                        <h1 class="ho">熊炼</h1>
+                        <h2>讲师，硕导</h2>
+                        <p><a href="https://faculty.cqupt.edu.cn/xionglian/zh_CN/index.htm" target="_blank">详细信息</a></p>
+                        <p class="hua">
+                            武汉大学测绘遥感信息工程国家重点实验室通信与信息系统专业博士，电子科技大学博士后。主持参与国家重点研发计划、国家自然科学基金、重庆市自然科学基金、中国电子科技集团第十研究所技术创新基金等项目，发表SCI/EI论文十余篇。主要研究领域：时空数据挖掘、多模态数据融合、图文跨模态检索等。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--
+End #about-us
+========================== -->
+    <!-- 招生 -->
+    <section id="portfolio" style="margin-top: -100px; ">
+        <div class="container">
+            <div class="section-title text-center wow fadeInDown">
+                <h2>招新</h2>
+                <p>软件硬件，总有适合你。</p>
+            </div>
+
+            <!--  <nav class="project-filter clearfix text-center wow fadeInLeft"  data-wow-delay="0.5s">
+         <ul class="list-inline">
+             <li><a href="javascript:;" class="filter" data-filter="all">All</a></li>
+             <li><a href="javascript:;" class="filter" data-filter=".app">App</a></li>
+             <li><a href="javascript:;" class="filter" data-filter=".photography">Photography</a></li>
+             <li><a href="javascript:;" class="filter" data-filter=".web">Web</a></li>
+             <li><a href="javascript:;" class="filter" data-filter=".print">Print</a></li>
+         </ul>
+     </nav> -->
+            <!-- <clearfix:display:table> -->
+
+
+            <div id="projects" class="clearfix">
+
+
+                <figure class="mix portfolio-item app">
+                    <img class="img-responsive wz rotate" src="img/portfolio/js.svg" alt="Portfolio Item">
+                    <figcaption class="mask">
+                        <h3 align="center">HTML</h3>
+                    </figcaption>
+                </figure>
+
+                <figure class="mix portfolio-item app">
+                    <img class="img-responsive wz rotate" src="img/portfolio/C++.jpg" alt="Portfolio Item">
+                    <figcaption class="mask">
+                        <h3 align="center">C++</h3>
+                    </figcaption>
+                </figure>
+
+                <figure class="mix portfolio-item app">
+                    <img class="img-responsive wz rotate" src="img/portfolio/java.svg" alt="Portfolio Item">
+                    <figcaption class="mask">
+                        <h3 align="center">JAVA</h3>
+                    </figcaption>
+                </figure>
+                </figure>
+
+                <figure class="mix portfolio-item app">
+                    <img class="img-responsive wz rotate" src="img/portfolio/android.svg" alt="Portfolio Item">
+                    <figcaption class="mask">
+                        <h3 align="center">Android</h3>
+                    </figcaption>
+                </figure>
+
+                <figure class="mix portfolio-item app">
+                    <img class="img-responsive wz rotate" src="img/portfolio/python.svg" alt="Portfolio Item">
+                    <figcaption class="mask">
+                        <h3 align="center">Python</h3>
+                    </figcaption>
+                </figure>
+
+                <figure class="mix portfolio-item app">
+                    <img class="img-responsive wz rotate" src="img/portfolio/hardware.svg" alt="Portfolio Item">
+                    <figcaption class="mask">
+                        <h3 align="center">Embed</h3>
+                    </figcaption>
+                </figure>
+
+                <figure class="mix portfolio-item app">
+                    <img class="img-responsive wz rotate" src="img/portfolio/PHP.svg" alt="Portfolio Item">
+                    <figcaption class="mask">
+                        <h3 align="center">Mysql</h3>
+                    </figcaption>
+                </figure>
+
+                <figure class="mix portfolio-item app">
+                    <img class="img-responsive wz rotate" src="img/portfolio/linux.svg" alt="Portfolio Item">
+                    <figcaption class="mask">
+                        <h3 align="center">Linux</h3>
+                    </figcaption>
+                </figure>
+
+            </div>
+            <!-- end #projects -->
+        </div>
+    </section>
+
+
+
+    <!--设施展示-->
+    <section id="sheshi" style="margin-top: -100px; margin-bottom: 100px;">
+        <div class="section-title text-center wow fadeInDown">
+            <h2>设施</h2>
+            <p>一应俱全，都在等你。</p>
+        </div>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="box">
+                        <img src="img/sheshi/打印机.jpg" width="300">
+                        <div class="box-content">
+                            <h3 class="title">打印机</h3>
+                            <span class="post">随时都可</span>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="box">
+                        <img src="img/sheshi/咖啡机.jpg">
+                        <div class="box-content">
+                            <h3 class="title">咖啡机</h3>
+                            <span class="post">想喝就喝</span>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="box">
+                        <img class="img-clip image-clip-5" src="img/sheshi/冰箱.jpg">
+                        <div class="box-content">
+                            <h3 class="title">小冰箱</h3>
+                            <span class="post">即时存放</span>
+
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="col-md-4 col-sm-6">
+                    <div class="box">
+                        <img src="img/sheshi/显示器1.jpg">
+                        <div class="box-content">
+                            <h3 class="title">电脑显示器</h3>
+                            <span class="post">多窗口办公，更轻松</span>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="box">
+                        <img src="img/sheshi/4-6（1）.jpg">
+                        <div class="box-content">
+                            <h3 class="title">老头乐</h3>
+                            <span class="post">练成老司机</span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="box">
+                        <img src="img/sheshi/1-1.jpg">
+                        <div class="box-content">
+                            <h3 class="title">科研船</h3>
+                            <span class="post">新时代能承载你的船</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section>
+            <!--
+
+
+========================== -->
+            <!-- 招生end -->
+
+
+            <!--
+#lifestyle
+========================== -->
+            <section id="lifestyle" style="margin-top: 100px; margin-bottom: 100px;">
+                <div class="section-title text-center wow fadeInDown">
+                    <h2>生活趣事</h2>
+                    <p>生活中的点点滴滴，都是美好。</p>
+                </div>
+            </section>
+            <div class="happy">
+                <div class="container">
+                    <section class="design-category">
+                        <!------------------------------- personal ------------------------------->
+                        <h2 class="category-title">酷酷的个人</h2>
+                        <div class="design-grid">
+                            <div class="design-item">
+                                <div class="img-container">
+                                    <img src="image25/image(5).jpeg" alt="个人照片">
+                                    <div class="overlay-title">
+                                        <h3>准备起飞的机长</h3>
+                                        <p>探索人体极限</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="design-item">
+                                <div class="img-container">
+                                    <img src="image25/image(4).jpeg" alt="个人照片">
+                                    <div class="overlay-title">
+                                        <h3>认真敲代码的学长</h3>
+                                        <p>沉浸于学习无法自拔</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="design-item">
+                                <div class="img-container">
+                                    <img src="image25/image(1).jpeg" alt="个人照片">
+                                    <div class="overlay-title">
+                                        <h3>25通软第一靓女</h3>
+                                        <p>优雅与智慧并存</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="design-item">
+                                <div class="img-container">
+                                    <img src="image25/image(2).jpeg" alt="个人照片">
+                                    <div class="overlay-title">
+                                        <h3>25通软第二靓女</h3>
+                                        <p>体重与美貌并重</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="design-item">
+                                <div class="img-container">
+                                    <img src="image25/image(3).jpeg" alt="个人照片">
+                                    <div class="overlay-title">
+                                        <h3>沈阳抽象王</h3>
+                                        <p>目标是成为东北雨姐唯一的男人</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="design-item">
+                                <div class="img-container">
+                                    <img src="image25/image(6).jpeg" alt="个人照片">
+                                    <div class="overlay-title">
+                                        <h3>通软深情王</h3>
+                                        <p>休息之余不忘报备</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!------------------------ Team ----------------------->
+                    <section class="design-category">
+                        <h2 class="category-title">团结的Team</h2>
+                        <div class="design-grid">
+                            <div class="design-item">
+                                <div class="img-container">
+                                    <img src="image25/imageTeam (1).jpg" alt="个人照片">
+                                    <div class="overlay-title">
+                                        <h3>排练的闲暇时刻</h3>
+                                        <p>团结就是力量</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="design-item">
+                                <div class="img-container">
+                                    <img src="image25/imageTeam (4).jpg" alt="个人照片">
+                                    <div class="overlay-title">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="design-item">
+                                <div class="img-container">
+                                    <img src="image25/imageTeam (3).jpg" alt="个人照片">
+                                    <div class="overlay-title">
+                                        <h3></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="design-item">
+                                <div class="img-container">
+                                    <img src="image25/imageTeam (2).jpg" alt="个人照片">
+                                    <div class="overlay-title">
+                                        <h3>甜蜜二人组</h3>
+                                        <p>甜蜜的瞬间</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="design-item">
+                                <div class="img-container">
+                                    <img src="image25/imageTeam (5).jpg" alt="个人照片">
+                                    <div class="overlay-title">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="design-item">
+                                <div class="img-container">
+                                    <img src="image25/imageTeam (6).jpg" alt="个人照片">
+                                    <div class="overlay-title">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="design-category">
+                        <!------------------------------- personal ------------------------------->
+                        <h2 class="category-title"><a href="behind-the-scence-25.html" target="_blank">幕后花絮</a></h2>
+                        <div class="design-grid">
+                            <div class="design-item">
+                                <div class="img-container">
+                                    <img src="image25/mu.jpeg" alt="幕后花絮">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+
+                <!--
+#service
+ ========================== -->
+                <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" title="网站模板">网站模板</a>
+                </div>
+                <div class="section-title text-center" style="background-color: red; width: 200px; height: 100px;">
+                    <span style="background-color: rgb(112, 5, 243); display:inline-block; ">
+                        <p>we</p>
+                    </span>
+                    <span style="display: inline-block;">
+                        <p>are</p>
+                    </span>
+                </div>
+
+                <section id=service style="margin-top: 100px;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="section-title text-center wow fadeInDown">
+                                    <h2><strong>文章</strong></h2>
+                                    <!-- <span>即将上线...</span>     -->
+                                    <!-- <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-6 col-sm-12 wow fadeInLeft">
+                                <div class="media">
+                                    <a href="essay1.html" class="pull-left">
+                                        <img class="wz" src="img/icons/monitor.png" class="media-object" alt="Monitor">
+                                    </a>
+                                    <div class="media-body">
+                                        <a href="essay1.html">
+                                            <h3 class="wz2"><strong>选择自己想做的事，成为想成为的人</strong></h3>
+                                        </a>
+                                        <p><strong>人生漫长且充满未知，在漫漫人生路中会遇到很多选择，选择考研应该是大家经过深思熟虑，做了自己想做的事吧。在研究生阶段想成为什么样的人，也会取决于你的选择。</strong>
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
+                                <div class="media">
+                                    <a href="essay2.html" class="pull-left">
+                                        <img class="wz" src="img/icons/cog.png" alt="Cog">
+                                    </a>
+                                    <div class="media-body">
+                                        <a href="essay2.html">
+                                            <h3 class="wz2"><strong>走过来时路</strong></h3>
+                                        </a>
+                                        <p><strong>在上一年的这个时间点，我同所有备考复试的你们一样，在人满为患的图书馆内温习着通信原理，在万物互联的网上搜寻着复试技巧，在忐忑不安的心中期待着顺利上岸。时光如白驹过隙，转眼间已过去一年，作为学长而言，和你们讲一讲研究生这一年的所经历的蜕变。</strong>
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6 col-sm-12 wow fadeInLeft">
+                                <div class="media">
+                                    <a href="essay3.html" class="pull-left">
+                                        <img class="wz" src="img/icons/ruler.png" alt="Ruler">
+                                    </a>
+                                    <div class="media-body">
+                                        <a href="essay3.html">
+                                            <h3 class="wz2"><strong>南岸风起时</strong></h3>
+                                        </a>
+                                        <p><strong>写这篇文章的此刻我已经融入这个实验室半年有余。我很感谢陶老师能让我有机会加入咱们这个团队。陶老师不仅是学习上的导师，更是生活上的导师。所以在团队里学到的不仅仅是知识，更多的是待人接物的礼貌，为人处事的能力，对美好事物的欣赏能力，以便我们能更好地感知生活、享受生活、热爱生活。</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
+                                <div class="media">
+                                    <a href="essay4.html" class="pull-left">
+                                        <img class="wz" src="img/icons/camera.png" alt="Camera">
+                                    </a>
+                                    <div class="media-body">
+                                        <a href="essay4.html">
+                                            <h3 class="wz2"><strong>“围墙”里不一样的东西</strong></h3>
+                                        </a>
+                                        <p><strong>正相信经过研究生初试的你们都听过这么些话，“研究生就像围城，外面的人想进来，里面的人想出去”,“研究生只有拿到录取通知书和拿到毕业证书的时候是快乐的”。或许正在紧张准备研究生复试的你们只能撇撇嘴说，“这不妥妥的凡尔赛吗，我如果上岸，导师叫我干啥都行”。诚然，可能大部分考研的人都或多或少都有这个想法，但我想说，只有真正经历过研究生生活的同学才可能体会这些话吧。</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
+                                <div class="media">
+                                    <a href="essay5.html" class="pull-left">
+                                        <img class="wz" src="img/icons/cog.png" alt="Cog">
+                                    </a>
+                                    <div class="media-body">
+                                        <a href="essay5.html">
+                                            <h3 class="wz2"><strong>欢迎来到通软大家族</strong></h3>
+                                        </a>
+                                        <p><strong>在刚刚结束了残酷激烈的初复试后，终于成功迈进了研究生的这一门槛，同时这也标志着你即将进入了一个新的学习环境。对于初来乍到的新生，相信你对的研究生生活是存在困惑的，虽然之前也曾听过不少师兄师姐提及过，但是这样的生活究竟是怎样的只有你自己体会了才能知道。</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
+                                <div class="media">
+                                    <a href="essay6.html" class="pull-left">
+                                        <img class="wz" src="img/icons/ruler.png" alt="Cog">
+                                    </a>
+                                    <div class="media-body">
+                                        <a href="essay6.html">
+                                            <h3 class="wz2"><strong>在团队正能量下点燃自己</strong></h3>
+                                        </a>
+                                        <p><strong>
+                                                我们的人生需要别人鼓掌，这样的我们会更自信，步伐更轻松矫健。生活中，团队亦是如此。团队正能量的传染力就像磁场，可以向外辐射积极和乐观。任何事情，正能量的团队会将其做的漂亮而华彩;相反负能量的团队，碰到的则是重重山峦和荆棘，态度不同，带来的结果不同。</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div> <!-- end .row -->
+                    </div> <!-- end .container -->
+                </section>
+                <!--
+End #service
+========================== -->
+
+
+                <!-- <section id="service-bottom">
+                <div class="container">
+                    <div class="mobile-device">
+                        <img data-wow-delay="0.2s" class="img-responsive black  wow fadeInLeftBig"
+                            src="img/icons/iphone-black.png" alt="iPhone Black">
+                        <img data-wow-delay="0.5s" class="img-responsive white  wow fadeInLeftBig"
+                            src="img/icons/iphone-white.png" alt="iPhone White">
+                    </div>
+                    <div class="service-features wow fadeInRight">
+                        <h3>我们需要你...</h3>
+                        <ul>
+                            <li>勤奋刻苦</li>
+                            <li>动手能力</li>
+                            <li>真诚谦虚</li>
+                            <li>团队协作</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </section> -->
+                <!--
+End #service-bottom
+
+
+<!-
+#quotes
+========================== -->
+                <section id="quotes">
+                    <div class="container">
+                        <div class="row wow zoomIn">
+                            <div class="col-lg-12">
+                                <div class="call-to-action text-center">
+                                    <p>What are you waiting for? Join us now!</p><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--
+End #quotes
+========================== -->
+                <!--
+#footer
+========================== -->
+                <footer id="footer" class="text-center">
+                    <div class="box1">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6">
+                                    <p class="text-center" color="#121116"><span style="font-size: 20px;"><img
+                                                src="img/icons/mail.png" alt="">&nbsp;Mail:
+                                            taoyang@cqupt.edu.cn</span></p>
+
+                                </div>
+                                <div class="col-xs-12 col-sm-6">
+                                    <p class="text-center"><span style="font-size: 20px;"><img src="img/icons/qq.png"
+                                                alt="">&nbsp;QQ
+                                            Group:468219711 </span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="footer-logo wow fadeInDown">
+                                        <!--<img src="img/web-qrcode.png" alt="">-->
+                                        <a href="https://qm.qq.com/q/rhoFLCgJRS" target="_blank">
+                                            <img src="img/2024码1.png" alt=""> <br>
+                                            <br>
+                                            <strong>
+                                                <p>
+                                                    <font size="4" color="white">&nbsp;请点我！！！</font>
+                                                </p>
+                                            </strong>
+                                        </a>
+                                    </div>
+                                    <div class="footer-social wow fadeInUp">
+                                        <h3>通信软件工程技术研究中心</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+                <!-- <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    var images = [
+                        'img/1.jpg', 
+                        'img/2.jpg', 
+                    ];
+                    var footer = document.getElementById('footer');
+                    var currentIndex = 0;
+
+                    function changeBackground() {
+                        currentIndex = (currentIndex + 1) % images.length;
+                        footer.style.backgroundImage = 'url(' + images[currentIndex] + ')';
+                    }
+
+                    // 初始背景图片
+                    footer.style.backgroundImage = 'url(' + images[0] + ')';
+                    
+                    // 每5秒切换一次背景图片
+                    setInterval(changeBackground, 5000);
+                });
+            </script> -->
+                <!--
+End #footer
+========================== -->
+
+
+                <!--
+JavaScripts
+========================== -->
+
+                <!-- main jQuery -->
+                <script src="js/vendor/jquery-1.11.1.min.js"></script>
+                <!-- Bootstrap -->
+                <script src="js/bootstrap.min.js"></script>
+                <!-- jquery.nav -->
+                <script src="js/jquery.nav.js"></script>
+                <!-- Portfolio Filtering -->
+                <script src="js/jquery.mixitup.min.js"></script>
+                <!-- Fancybox -->
+                <script src="js/jquery.fancybox.pack.js"></script>
+                <!-- Parallax sections -->
+                <script src="js/jquery.parallax-1.1.3.js"></script>
+                <!-- jQuery Appear -->
+                <script src="js/jquery.appear.js"></script>
+                <!-- countTo -->
+                <script src="js/jquery-countTo.js"></script>
+                <!-- owl carousel -->
+                <script src="js/owl.carousel.min.js"></script>
+                <!-- WOW script -->
+                <script src="js/wow.min.js"></script>
+                <!-- theme custom scripts -->
+                <script src="js/main.js"></script>
+                <!-- video-js -->
+                <script src="js/video.min.js"></script>
+                <script type="text/javascript">
+                    var myPlayer = videojs('my-video');
+                    videojs("my-video").ready(function () {
+                        var myPlayer = this;
+                        myPlayer.play();
+                    });
+                </script>
+                <span class="js-cursor-container"></span>
+                <script>
+                    (function fairyDustCursor() {
+
+                        var possibleColors = ["#D61C59", "#E7D84B", "#1B8798"]
+                        var width = window.innerWidth;
+                        var height = window.innerHeight;
+                        var cursor = { x: width / 2, y: width / 2 };
+                        var particles = [];
+
+                        function init() {
+                            bindEvents();
+                            loop();
+                        }
+
+                        // Bind events that are needed
+                        function bindEvents() {
+                            document.addEventListener('mousemove', onMouseMove);
+                            window.addEventListener('resize', onWindowResize);
+                        }
+
+                        function onWindowResize(e) {
+                            width = window.innerWidth;
+                            height = window.innerHeight;
+                        }
+
+                        function onMouseMove(e) {
+                            cursor.x = e.clientX;
+                            cursor.y = e.clientY;
+
+                            addParticle(cursor.x, cursor.y, possibleColors[Math.floor(Math.random() * possibleColors.length)]);
+                        }
+
+                        function addParticle(x, y, color) {
+                            var particle = new Particle();
+                            particle.init(x, y, color);
+                            particles.push(particle);
+                        }
+
+                        function updateParticles() {
+
+                            // Updated
+                            for (var i = 0; i < particles.length; i++) {
+                                particles[i].update();
+                            }
+
+                            // Remove dead particles
+                            for (var i = particles.length - 1; i >= 0; i--) {
+                                if (particles[i].lifeSpan < 0) {
+                                    particles[i].die();
+                                    particles.splice(i, 1);
+                                }
+                            }
+
+                        }
+
+                        function loop() {
+                            requestAnimationFrame(loop);
+                            updateParticles();
+                        }
+
+                        /**
+                         * Particles
+                         */
+
+                        function Particle() {
+
+                            this.character = "*";
+                            this.lifeSpan = 120; //ms
+                            this.initialStyles = {
+                                "position": "fixed",
+                                "display": "inline-block",
+                                "top": "0px",
+                                "left": "0px",
+                                "pointerEvents": "none",
+                                "touch-action": "none",
+                                "z-index": "10000000",
+                                "fontSize": "25px",
+                                "will-change": "transform"
+                            };
+
+                            // Init, and set properties
+                            this.init = function (x, y, color) {
+
+                                this.velocity = {
+                                    x: (Math.random() < 0.5 ? -1 : 1) * (Math.random() / 2),
+                                    y: 1
+                                };
+
+                                this.position = { x: x + 10, y: y + 10 };
+                                this.initialStyles.color = color;
+
+                                this.element = document.createElement('span');
+                                this.element.innerHTML = this.character;
+                                applyProperties(this.element, this.initialStyles);
+                                this.update();
+
+                                document.querySelector('.js-cursor-container').appendChild(this.element);
+                            };
+
+                            this.update = function () {
+                                this.position.x += this.velocity.x;
+                                this.position.y += this.velocity.y;
+                                this.lifeSpan--;
+
+                                this.element.style.transform = "translate3d(" + this.position.x + "px," + this.position.y + "px, 0) scale(" + (this.lifeSpan / 120) + ")";
+                            }
+
+                            this.die = function () {
+                                this.element.parentNode.removeChild(this.element);
+                            }
+
+                        }
+
+                        /**
+                         * Utils
+                         */
+
+                        // Applies css `properties` to an element.
+                        function applyProperties(target, properties) {
+                            for (var key in properties) {
+                                target.style[key] = properties[key];
+                            }
+                        }
+
+                        if (!('ontouchstart' in window || navigator.msMaxTouchPoints)) init();
+                    })();    
+                </script>
+
+                <script>
+                    (function () {
+                        var a_idx = 0;
+                        window.onclick = function (event) {
+                            var a = new Array('C++', 'Java', 'Python', 'JS', 'Go', 'Rust', 'PHP', 'Swift', 'Kotlin', 'Ruby', 'HTML', 'CSS', 'SQL', 'R', 'TS', 'C#', 'Lua', 'Perl', 'Scala');
+
+                            var heart = document.createElement("b"); //创建b元素
+                            heart.onselectstart = new Function('event.returnValue=false'); //防止拖动
+
+                            document.body.appendChild(heart).innerHTML = a[a_idx]; //将b元素添加到页面上
+                            a_idx = (a_idx + 1) % a.length;
+                            heart.style.cssText = "position: fixed;left:-100%;cursor: url('./image25/image1.cur'), default;"; // 设置鼠标样式
+
+                            var f = 16, // 字体大小
+                                x = event.clientX - f / 2, // 横坐标
+                                y = event.clientY - f, // 纵坐标
+                                c = randomColor(), // 随机颜色
+                                a = 1, // 透明度
+                                s = 1.2; // 放大缩小
+
+                            var timer = setInterval(function () { //添加定时器
+                                if (a <= 0) {
+                                    document.body.removeChild(heart);
+                                    clearInterval(timer);
+                                } else {
+                                    heart.style.cssText = "font-size:16px;cursor: url('./image25/image1.cur'), default;position: fixed;color:" +
+                                        c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +
+                                        s + ");";
+
+                                    y--;
+                                    a -= 0.016;
+                                    s += 0.002;
+                                }
+                            }, 15)
+                        }
+
+                        // 随机颜色
+                        function randomColor() {
+                            return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";
+                        }
+                    }());
+                </script>
+</body>
+
+</html>

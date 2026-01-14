@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <style>  
+        .container {    
+            width: 100%; /* 或者您想要的固定宽度 */    
+            height: 675px;    
+            overflow: hidden; /* 防止图片溢出 */    
+            display: flex;    
+            justify-content: center; /* 水平居中 */    
+            align-items: center; /* 垂直居中 */    
+            background-color: rgb(255, 255, 255); /* 可选：设置背景颜色以防图片加载失败 */    
+        }    
+        
+        .container img {    
+            max-width: 100%; /* 图片最大宽度为容器宽度 */    
+            max-height: 100%; /* 图片最大高度为容器高度 */    
+            width: auto; /* 保持图片原始宽高比 */    
+            height: auto; /* 保持图片原始宽高比 */    
+            transition: opacity 5s; /* 可选：添加透明度过渡效果 */    
+            opacity: 0; /* 初始透明度为0，如果需要的话 */    
+            animation: fadeIn 8s forwards; /* 应用渐显动画 */    
+        }    
+        
+        @keyframes fadeIn {    
+            from { opacity: 0; }    
+            to { opacity: 1; }    
+        }
+        .play-button {  
+            position: fixed; /* 固定定位 */  
+            left: 20px; /* 距离页面左侧的距离 */  
+            bottom: 50%; /* 相对于视口底部定位，然后通过transform上移 */  
+            transform: translateY(50%); /* 上移自身高度的50%，实现垂直居中 */  
+            background-color: white; /* 白色背景 */  
+            border: none; /* 无边框 */  
+            border-radius: 50%; /* 圆形边框 */  
+            width: 50px; /* 宽度 */  
+            height: 50px; /* 高度，与宽度相同以形成圆形 */  
+            cursor: pointer; /* 鼠标悬停时显示手指形状，表示可点击 */  
+            outline: none; /* 移除点击时的轮廓线 */  
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+
+
+        }  
+   
+        .play-button::before {  
+            content: "▶"; /* 播放图标 */  
+            display: block;  
+            line-height: 50px; /* 使文本垂直居中 */  
+            text-align: center; /* 文本水平居中 */  
+            font-size: 24px; /* 图标大小 */  
+            color: black; /* 图标颜色 */  
+        }
+        body {  
+            display: none;  
+        }  
+        .visible {  
+            display: block;  
+        }
+        *{
+            cursor: url('./sym749.cur'),default;
+        }  
+    </style>  
+    </head>  
+    <body>
+        <script>  
+            setTimeout(function() {  
+                document.body.classList.add('visible');    
+            }, 4000);  
+        </script>
+        <button class="play-button" id="playBtn" style="visibility: visible;" onclick="playAudio()"></button>   
+        <div class="container">    
+            <img src="./ys.jpg" alt="Descriptive Alt Text"> 
+       
+        <audio id="myAudio" style="display: none;">  
+            <source src="qidong.mp3" type="audio/mpeg">  
+            Your browser does not support the audio element.  
+        </audio>    
+          
+        <script>  
+            // 获取音频元素  
+            var audio = document.getElementById('myAudio');  
+          
+            // 播放音频的函数  
+            function playAudio() {  
+                audio.play().catch(function(error) {  
+                    console.error("Audio couldn't be played.", error);  
+                    // 这里可以添加额外的错误处理逻辑  
+                });  
+            }  
+        </script>  
+      
+        <script>   
+            setTimeout(function() {  
+                window.location.href = 'wangye1.5.html'; 
+            }, 15000); // 10000毫秒 = 5秒  
+        </script>
+        <span class="js-cursor-container"></span>
+        <script>
+            (function fairyDustCursor() {
+     
+                var possibleColors = ["#D61C59", "#E7D84B", "#1B8798"]
+                var width = window.innerWidth;
+                var height = window.innerHeight;
+                var cursor = { x: width / 2, y: width / 2 };
+                var particles = [];
+     
+                function init() {
+                    bindEvents();
+                    loop();
+                }
+     
+                // Bind events that are needed
+                function bindEvents() {
+                    document.addEventListener('mousemove', onMouseMove);
+                    window.addEventListener('resize', onWindowResize);
+                }
+     
+                function onWindowResize(e) {
+                    width = window.innerWidth;
+                    height = window.innerHeight;
+                }
+     
+                function onMouseMove(e) {
+                    cursor.x = e.clientX;
+                    cursor.y = e.clientY;
+     
+                    addParticle(cursor.x, cursor.y, possibleColors[Math.floor(Math.random() * possibleColors.length)]);
+                }
+     
+                function addParticle(x, y, color) {
+                    var particle = new Particle();
+                    particle.init(x, y, color);
+                    particles.push(particle);
+                }
+     
+                function updateParticles() {
+     
+                    // Updated
+                    for (var i = 0; i < particles.length; i++) {
+                        particles[i].update();
+                    }
+     
+                    // Remove dead particles
+                    for (var i = particles.length - 1; i >= 0; i--) {
+                        if (particles[i].lifeSpan < 0) {
+                            particles[i].die();
+                            particles.splice(i, 1);
+                        }
+                    }
+     
+                }
+     
+                function loop() {
+                    requestAnimationFrame(loop);
+                    updateParticles();
+                }
+     
+                /**
+                 * Particles
+                 */
+     
+                function Particle() {
+     
+                    this.character = "*";
+                    this.lifeSpan = 120; //ms
+                    this.initialStyles = {
+                        "position": "fixed",
+                        "display": "inline-block",
+                        "top": "0px",
+                        "left": "0px",
+                        "pointerEvents": "none",
+                        "touch-action": "none",
+                        "z-index": "10000000",
+                        "fontSize": "25px",
+                        "will-change": "transform"
+                    };
+     
+                    // Init, and set properties
+                    this.init = function (x, y, color) {
+     
+                        this.velocity = {
+                            x: (Math.random() < 0.5 ? -1 : 1) * (Math.random() / 2),
+                            y: 1
+                        };
+     
+                        this.position = { x: x + 10, y: y + 10 };
+                        this.initialStyles.color = color;
+     
+                        this.element = document.createElement('span');
+                        this.element.innerHTML = this.character;
+                        applyProperties(this.element, this.initialStyles);
+                        this.update();
+     
+                        document.querySelector('.js-cursor-container').appendChild(this.element);
+                    };
+     
+                    this.update = function () {
+                        this.position.x += this.velocity.x;
+                        this.position.y += this.velocity.y;
+                        this.lifeSpan--;
+     
+                        this.element.style.transform = "translate3d(" + this.position.x + "px," + this.position.y + "px, 0) scale(" + (this.lifeSpan / 120) + ")";
+                    }
+     
+                    this.die = function () {
+                        this.element.parentNode.removeChild(this.element);
+                    }
+     
+                }
+     
+                /**
+                 * Utils
+                 */
+     
+                // Applies css `properties` to an element.
+                function applyProperties(target, properties) {
+                    for (var key in properties) {
+                        target.style[key] = properties[key];
+                    }
+                }
+     
+                if (!('ontouchstart' in window || navigator.msMaxTouchPoints)) init();
+            })();    
+        </script>
+        <script>
+            (function () {
+                var a_idx = 0;
+                window.onclick = function (event) {
+                    var a = new Array("全民制作人", "大家好", "我是练习", "时长两年半", "个人练习生", "彭自俊", "喜欢", "唱", "跳",
+                                "rap", "篮球", "music");
+     
+                    var heart = document.createElement("b"); //创建b元素
+                    heart.onselectstart = new Function('event.returnValue=false'); //防止拖动
+     
+                    document.body.appendChild(heart).innerHTML = a[a_idx]; //将b元素添加到页面上
+                    a_idx = (a_idx + 1) % a.length;
+                    heart.style.cssText = "position: fixed;left:-100%;"; //给p元素设置样式
+     
+                    var f = 16, // 字体大小
+                        x = event.clientX - f / 2, // 横坐标
+                        y = event.clientY - f, // 纵坐标
+                        c = randomColor(), // 随机颜色
+                        a = 1, // 透明度
+                        s = 1.2; // 放大缩小
+     
+                    var timer = setInterval(function () { //添加定时器
+                        if (a <= 0) {
+                            document.body.removeChild(heart);
+                            clearInterval(timer);
+                        } else {
+                            heart.style.cssText = "font-size:16px;cursor: default;position: fixed;color:" +
+                                c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +
+                                s + ");";
+     
+                            y--;
+                            a -= 0.016;
+                            s += 0.002;
+                        }
+                    }, 15)
+     
+                }
+                // 随机颜色
+                function randomColor() {
+     
+                    return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math
+                    .random() * 255)) + ")";
+     
+                }
+            }());
+        </script> 
+    </body>
+</html>
